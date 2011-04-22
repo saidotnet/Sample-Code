@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.agility.com/contracts" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.agility.com/contracts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.agility.com/contracts/Imports">
+      <xsd:import schemaLocation="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc?xsd=xsd0" namespace="http://schemas.agility.com/contracts" />
+      <xsd:import schemaLocation="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AgilityCIS.Orion.Services.DataContracts" />
+      <xsd:import schemaLocation="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AgilityCIS.Orion.Services.DataContracts.Criteria" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAgilityService_DeleteCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_DeleteCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetAddressTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressTypes" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetAddressTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetBillingCycles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillingCycles" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetBillingCycles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillingCyclesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetBillingUnit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillingUnit" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetBillingUnit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBillingUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetCardTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardTypes" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetCardTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetCompanies_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanies" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetCompanies_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompaniesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetCreditCheckScores_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditCheckScores" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetCreditCheckScores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditCheckScoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetCreditControlStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditControlStatus" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetCreditControlStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditControlStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetCustomerDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetCustomerDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetCustomerSummaryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerSummaryDetails" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetCustomerSummaryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerSummaryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetCustomerTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerTypes" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetCustomerTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetIndustries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndustries" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetIndustries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndustriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetInvoiceDeliveries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceDeliveries" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetInvoiceDeliveries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceDeliveriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetInvoiceStyles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceStyles" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetInvoiceStyles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceStylesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetParties_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParties" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetParties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetPaymentMethods_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentMethods" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetPaymentMethods_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentMethodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetPriorities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPriorities" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetPriorities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrioritiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetRecentCustSearchResults_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecentCustSearchResults" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetRecentCustSearchResults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecentCustSearchResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetTaxIndicators_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaxIndicators" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetTaxIndicators_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaxIndicatorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetTreatmentTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTreatmentTypes" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetTreatmentTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTreatmentTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_Login_FaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/AgilityCIS.Orion.Services.DataContracts" name="detail" element="q1:FaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_SaveCustomerDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_SaveCustomerDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_SearchCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_SearchCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetContacts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContacts" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetContacts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContactsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAgilityService">
+    <wsdl:operation name="DeleteCustomer">
+      <wsdl:input wsaw:Action="DeleteCustomer" message="tns:IAgilityService_DeleteCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/DeleteCustomerResponse" message="tns:IAgilityService_DeleteCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressTypes">
+      <wsdl:input wsaw:Action="GetAddressTypes" message="tns:IAgilityService_GetAddressTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetAddressTypesResponse" message="tns:IAgilityService_GetAddressTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingCycles">
+      <wsdl:input wsaw:Action="GetBillingCycles" message="tns:IAgilityService_GetBillingCycles_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetBillingCyclesResponse" message="tns:IAgilityService_GetBillingCycles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBillingUnit">
+      <wsdl:input wsaw:Action="GetBillingUnit" message="tns:IAgilityService_GetBillingUnit_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetBillingUnitResponse" message="tns:IAgilityService_GetBillingUnit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardTypes">
+      <wsdl:input wsaw:Action="GetCardTypes" message="tns:IAgilityService_GetCardTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetCardTypesResponse" message="tns:IAgilityService_GetCardTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanies">
+      <wsdl:input wsaw:Action="GetCompanies" message="tns:IAgilityService_GetCompanies_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetCompaniesResponse" message="tns:IAgilityService_GetCompanies_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditCheckScores">
+      <wsdl:input wsaw:Action="GetCreditCheckScores" message="tns:IAgilityService_GetCreditCheckScores_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetCreditCheckScoresResponse" message="tns:IAgilityService_GetCreditCheckScores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditControlStatus">
+      <wsdl:input wsaw:Action="GetCreditControlStatus" message="tns:IAgilityService_GetCreditControlStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetCreditControlStatusResponse" message="tns:IAgilityService_GetCreditControlStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <wsdl:input wsaw:Action="GetCustomerDetails" message="tns:IAgilityService_GetCustomerDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetCustomerDetailsResponse" message="tns:IAgilityService_GetCustomerDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerSummaryDetails">
+      <wsdl:input wsaw:Action="GetCustomerSummaryDetails" message="tns:IAgilityService_GetCustomerSummaryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetCustomerSummaryDetailsResponse" message="tns:IAgilityService_GetCustomerSummaryDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerTypes">
+      <wsdl:input wsaw:Action="GetCustomerTypes" message="tns:IAgilityService_GetCustomerTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetCustomerTypesResponse" message="tns:IAgilityService_GetCustomerTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndustries">
+      <wsdl:input wsaw:Action="GetIndustries" message="tns:IAgilityService_GetIndustries_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetIndustriesResponse" message="tns:IAgilityService_GetIndustries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceDeliveries">
+      <wsdl:input wsaw:Action="GetInvoiceDeliveries" message="tns:IAgilityService_GetInvoiceDeliveries_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetInvoiceDeliveriesResponse" message="tns:IAgilityService_GetInvoiceDeliveries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceStyles">
+      <wsdl:input wsaw:Action="GetInvoiceStyles" message="tns:IAgilityService_GetInvoiceStyles_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetInvoiceStylesResponse" message="tns:IAgilityService_GetInvoiceStyles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParties">
+      <wsdl:input wsaw:Action="GetParties" message="tns:IAgilityService_GetParties_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetPartiesResponse" message="tns:IAgilityService_GetParties_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentMethods">
+      <wsdl:input wsaw:Action="GetPaymentMethods" message="tns:IAgilityService_GetPaymentMethods_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetPaymentMethodsResponse" message="tns:IAgilityService_GetPaymentMethods_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriorities">
+      <wsdl:input wsaw:Action="GetPriorities" message="tns:IAgilityService_GetPriorities_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetPrioritiesResponse" message="tns:IAgilityService_GetPriorities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentCustSearchResults">
+      <wsdl:input wsaw:Action="GetRecentCustSearchResults" message="tns:IAgilityService_GetRecentCustSearchResults_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetRecentCustSearchResultsResponse" message="tns:IAgilityService_GetRecentCustSearchResults_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaxIndicators">
+      <wsdl:input wsaw:Action="GetTaxIndicators" message="tns:IAgilityService_GetTaxIndicators_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetTaxIndicatorsResponse" message="tns:IAgilityService_GetTaxIndicators_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTreatmentTypes">
+      <wsdl:input wsaw:Action="GetTreatmentTypes" message="tns:IAgilityService_GetTreatmentTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetTreatmentTypesResponse" message="tns:IAgilityService_GetTreatmentTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="Login" message="tns:IAgilityService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/LoginResponse" message="tns:IAgilityService_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/LoginFaultDetailFault" name="FaultDetailFault" message="tns:IAgilityService_Login_FaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCustomerDetails">
+      <wsdl:input wsaw:Action="SaveCustomerDetails" message="tns:IAgilityService_SaveCustomerDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/SaveCustomerDetailsResponse" message="tns:IAgilityService_SaveCustomerDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCustomers">
+      <wsdl:input wsaw:Action="SearchCustomers" message="tns:IAgilityService_SearchCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/SearchCustomersResponse" message="tns:IAgilityService_SearchCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContacts">
+      <wsdl:input wsaw:Action="GetContacts" message="tns:IAgilityService_GetContacts_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetContactsResponse" message="tns:IAgilityService_GetContacts_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

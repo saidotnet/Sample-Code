@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <section name="loggingConfiguration" type="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.LoggingSettings, Microsoft.Practices.EnterpriseLibrary.Logging" requirePermission="true" />
+    <section name="exceptionHandling" type="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.ExceptionHandlingSettings, Microsoft.Practices.EnterpriseLibrary.ExceptionHandling" requirePermission="true" />
+    <section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Microsoft.Practices.Unity.Configuration" />
+  </configSections>
+  <loggingConfiguration name="" tracingEnabled="true" defaultCategory="General">
+    <listeners>
+      <add name="Event Log Listener" type="Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.FormattedEventLogTraceListener, Microsoft.Practices.EnterpriseLibrary.Logging"
+        listenerDataType="Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.FormattedEventLogTraceListenerData, Microsoft.Practices.EnterpriseLibrary.Logging"
+        source="Enterprise Library Logging" formatter="Text Formatter"
+        log="" machineName="." traceOutputOptions="None" />
+    </listeners>
+    <formatters>
+      <add type="Microsoft.Practices.EnterpriseLibrary.Logging.Formatters.TextFormatter, Microsoft.Practices.EnterpriseLibrary.Logging"
+        template="Timestamp: {timestamp}{newline}&#xA;Message: {message}{newline}&#xA;Category: {category}{newline}&#xA;Priority: {priority}{newline}&#xA;EventId: {eventid}{newline}&#xA;Severity: {severity}{newline}&#xA;Title:{title}{newline}&#xA;Machine: {localMachine}{newline}&#xA;App Domain: {localAppDomain}{newline}&#xA;ProcessId: {localProcessId}{newline}&#xA;Process Name: {localProcessName}{newline}&#xA;Thread Name: {threadName}{newline}&#xA;Win32 ThreadId:{win32ThreadId}{newline}&#xA;Extended Properties: {dictionary({key} - {value}{newline})}"
+        name="Text Formatter" />
+    </formatters>
+    <categorySources>
+      <add switchValue="All" name="General">
+        <listeners>
+          <add name="Event Log Listener" />
+        </listeners>
+      </add>
+    </categorySources>
+    <specialSources>
+      <allEvents switchValue="All" name="All Events" />
+      <notProcessed switchValue="All" name="Unprocessed Category" />
+      <errors switchValue="All" name="Logging Errors &amp; Warnings">
+        <listeners>
+          <add name="Event Log Listener" />
+        </listeners>
+      </errors>
+    </specialSources>
+  </loggingConfiguration>
+  <exceptionHandling>
+    <exceptionPolicies>
+      <add name="Policy">
+        <exceptionTypes>
+          <add name="All Exceptions" type="System.Exception, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+            postHandlingAction="NotifyRethrow">
+            <exceptionHandlers>
+              <add name="Logging Exception Handler" type="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.LoggingExceptionHandler, Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging"
+                logCategory="General" eventId="100" severity="Critical" title="Enterprise Library Exception Handling"
+                formatterType="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.TextExceptionFormatter, Microsoft.Practices.EnterpriseLibrary.ExceptionHandling"
+                priority="0" />
+            </exceptionHandlers>
+          </add>
+        </exceptionTypes>
+      </add>
+    </exceptionPolicies>
+  </exceptionHandling>
+  <connectionStrings>
+    <!--Local-->
+    <add name="ConnectionString" connectionString="Data Source=nz-sql2008.agility.local;Initial Catalog=cms_ag;User ID=crm;Password=secret22" />
+    <!--Deployed-->
+    <!--<add name="ConnectionString" connectionString="Data Source=58.28.165.37,9128;Initial Catalog=cms_ag;User ID=crm;Password=secret22" />-->
+  </connectionStrings>
+  <unity>
+    <containers>
+      <container>
+        <types>
+          <type
+      type="AgilityCIS.Orion.Data.Interfaces.IDatabase, AgilityCIS.Orion.Data.Interfaces"
+      mapTo="AgilityCIS.Orion.Data.Implementation.Sql.Database, AgilityCIS.Orion.Data.Implementation.Sql">
+          </type>
+        </types>
+      </container>
+    </containers>
+  </unity>
+  <system.web>
+    <compilation debug="true" targetFramework="4.0"/>
+  </system.web>
+  <system.serviceModel>
+    <extensions>
+      <behaviorExtensions>
+        <add name="SLExtension" type="AgilityCIS.Orion.Services.SLFaultBehaviour.SLFaultCorrector, AgilityCIS.Orion.Services.SLFaultBehaviour, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+      </behaviorExtensions>
+    </extensions>
+    <services>
+      <service name="AgilityCIS.Orion.Services.Implementation.AgilityService">
+        <clear />
+        <endpoint binding="basicHttpBinding" behaviorConfiguration="SLEndpointBehaviour" contract="AgilityCIS.Orion.Services.Interfaces.IAgilityService">
+
+        </endpoint>
+        <endpoint address="SLEndpoint" behaviorConfiguration="SLEndpointBehaviour"
+          binding="basicHttpBinding" bindingConfiguration="" contract="AgilityCIS.Orion.Services.Interfaces.IAgilityService"
+           />
+      </service>
+    </services>
+    <behaviors>
+      <endpointBehaviors>
+        <behavior name="SLEndpointBehaviour">
+          <SLExtension />
+        </behavior>
+      </endpointBehaviors>
+      <serviceBehaviors>
+        <behavior name="">
+          <serviceMetadata httpGetEnabled="true" />
+          <serviceDebug includeExceptionDetailInFaults="true" />
+        </behavior>
+      </serviceBehaviors>
+    </behaviors>
+    <serviceHostingEnvironment aspNetCompatibilityEnabled="true" multipleSiteBindingsEnabled="true">
+      <serviceActivations>
+        <clear/>
+        <add relativeAddress="AgilityCIS.Orion.svc" service="AgilityCIS.Orion.Services.Implementation.AgilityService,AgilityCIS.Orion.Services.Implementation"/>
+      </serviceActivations>
+    </serviceHostingEnvironment>
+
+  </system.serviceModel>
+  <system.webServer>
+    <modules runAllManagedModulesForAllRequests="true"/>
+  </system.webServer>
+</configuration>

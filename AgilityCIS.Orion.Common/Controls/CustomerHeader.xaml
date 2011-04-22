@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="AgilityCIS.Orion.Common.Controls.CustomerHeader"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+	 xmlns:local="clr-namespace:AgilityCIS.Orion.LocalizationManager;assembly=AgilityCIS.Orion.LocalizationManager"
+   >
+    <UserControl.Resources>
+    	  <local:ApplicationResources x:Key="Localization" />   
+	</UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+    	<Border  CornerRadius="8" Background="#FFA4E1C0" Height="65" VerticalAlignment="Top">
+    		<Grid Margin="0,5" >
+    			<Grid.ColumnDefinitions>
+    				<ColumnDefinition Width="100"/>
+    				<ColumnDefinition Width="20*"/>
+    				<ColumnDefinition Width="80"/>
+    				<ColumnDefinition Width="20*"/>
+    				<ColumnDefinition Width="100"/>
+    				<ColumnDefinition Width="20*"/>
+    				<ColumnDefinition Width="120"/>
+    				<ColumnDefinition Width="40*"/>
+    			</Grid.ColumnDefinitions>
+    			<Grid.RowDefinitions>
+    				<RowDefinition Height="33*"/>
+    				<RowDefinition Height="33*"/>
+    				<RowDefinition Height="33*"/>
+    			</Grid.RowDefinitions>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding ConverterParameter=ltDecisions, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="15,0,0,0" Foreground="#FF0C5112"/>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" x:Name="txtDecisions"/>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Text="{Binding ConverterParameter=ltBilling, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="15,0,0,0" Foreground="#FF0C5112"/>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" x:Name="txtBilling"/>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Text="{Binding ConverterParameter=ltType, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="15,0,0,0" Foreground="#FF0C5112"/>
+    			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1">
+    				<TextBlock TextWrapping="Wrap" x:Name="txtAccountManagerName"/>
+    				<TextBlock Foreground="Red" Margin="5,0,0,0" TextWrapping="Wrap" x:Name="txtDistricCode"/>
+    			</StackPanel>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding ConverterParameter=ltPhone, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="15,0,0,0" Foreground="#FF0C5112" Grid.Column="2"/>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="3" x:Name="txtPhone"/>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Text="{Binding ConverterParameter=ltFax, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="15,0,0,0" Foreground="#FF0C5112" Grid.Column="2"/>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="3" x:Name="txtFax"/>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Text="{Binding ConverterParameter=ltCreditCtrl, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="15,0,0,0" Foreground="#FF0C5112" Grid.Column="2"/>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Grid.Column="3" x:Name="txtCreditStatusCode"/>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding ConverterParameter=ltTotalBalance, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="15,0,0,0" Foreground="#FF0C5112" Grid.Column="4"/>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="5" x:Name="txtTotalBalance"/>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Row="1" Text="{Binding ConverterParameter=ltOverdue, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="15,0,0,1" Foreground="#FF0C5112" Grid.Column="4"/>
+    			<TextBlock x:Name="txtOverdue" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Grid.Column="5"/>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Text="{Binding ConverterParameter=ltCurrent, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="15,0,0,0" Foreground="#FF0C5112" Grid.Column="4"/>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Grid.Column="5" x:Name="txtCurrent"/>
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding ConverterParameter=ltPremiseAddress, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="15,0,0,0" Foreground="#FF0C5112" Grid.Column="6"/>
+    			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="7" Margin="15,0,0,0">
+    				<TextBlock TextWrapping="Wrap" x:Name="txtStreetAddr1"/>
+    				<TextBlock Text=", "/>
+    				<TextBlock TextWrapping="Wrap" x:Name="txtStreetAddr2"/>
+    				<TextBlock Text=", "/>
+    				<TextBlock TextWrapping="Wrap" x:Name="txtStreetAddr3"/>
+    			</StackPanel>
+
+    			<TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Text="{Binding ConverterParameter=ltPostalAddress, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Margin="15,0,0,0" Foreground="#FF0C5112" Grid.Column="6"/>
+    			<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Center" Grid.Column="7" Margin="15,0,0,0">
+    				<TextBlock TextWrapping="Wrap" x:Name="txtPostalAddr1"/>
+    				<TextBlock Text=", "/>
+    				<TextBlock TextWrapping="Wrap" x:Name="txtPostalAddr2"/>
+    				<TextBlock Text=", "/>
+    				<TextBlock TextWrapping="Wrap" x:Name="txtPostalAddr3"/>
+    			</StackPanel>
+    		</Grid>
+
+    	</Border>
+
+    </Grid>
+</UserControl>

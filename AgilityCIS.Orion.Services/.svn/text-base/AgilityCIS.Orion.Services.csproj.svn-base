@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3FCDA8A3-D0D5-45A7-86E1-7F0F5F7C966E}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgilityCIS.Orion.Services</RootNamespace>
+    <AssemblyName>AgilityCIS.Orion.Services</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IServiceAgent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProxyFactory.cs" />
+    <Compile Include="Service References\AgilitySvcProxy\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceAgent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AgilitySvcProxy\Agility.disco" />
+    <None Include="Service References\AgilitySvcProxy\Agility3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.AddressType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.BillingCycle.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.BillingUnit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.CardType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.Company.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.Contact.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.CreditCheckScore.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.CreditControlStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.Customer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.CustomerDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.CustomerSummary.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.CustomerType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.Industry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.InvoiceDelivery.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.InvoiceStyle.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.Party.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.PayMethod.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.Priority.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.RecentCustomerSearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.TaxIndicator.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.TreatmentType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.Services.AgilitySvcProxy.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.wsdl" />
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\configuration91.svcinfo" />
+    <None Include="Service References\AgilitySvcProxy\configuration.svcinfo" />
+    <None Include="Service References\AgilitySvcProxy\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityCIS.Orion.disco" />
+    <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\AgilitySvcProxy\Agility.wsdl" />
+    <None Include="Service References\AgilitySvcProxy\Agility.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\Agility1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\Agility2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AgilitySvcProxy\AgilityService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AgilitySvcProxy\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

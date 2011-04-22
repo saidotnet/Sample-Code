@@ -1,0 +1,12 @@
+E:\Agility_New\Agility.CIS.Orion.Contacts\Bin\Debug\Agility.CIS.Orion.Contacts.dll
+E:\Agility_New\Agility.CIS.Orion.Contacts\Bin\Debug\Agility.CIS.Orion.Contacts.pdb
+E:\Agility_New\Agility.CIS.Orion.Contacts\Bin\Debug\AppManifest.xaml
+E:\Agility_New\Agility.CIS.Orion.Contacts\Bin\Debug\Agility.CIS.Orion.Contacts.xap
+E:\Agility_New\Agility.CIS.Orion.Contacts\Bin\Debug\Agility.CIS.Orion.ContactsTestPage.html
+E:\Agility_New\Agility.CIS.Orion.Contacts\obj\Debug\ResolveAssemblyReference.cache
+E:\Agility_New\Agility.CIS.Orion.Contacts\obj\Debug\App.g.i.cs
+E:\Agility_New\Agility.CIS.Orion.Contacts\obj\Debug\MainPage.g.i.cs
+E:\Agility_New\Agility.CIS.Orion.Contacts\obj\Debug\Agility.CIS.Orion.Contacts.g.resources
+E:\Agility_New\Agility.CIS.Orion.Contacts\obj\Debug\Agility.CIS.Orion.Contacts.dll
+E:\Agility_New\Agility.CIS.Orion.Contacts\obj\Debug\Agility.CIS.Orion.Contacts.pdb
+E:\Agility_New\Agility.CIS.Orion.Contacts\obj\Debug\XapCacheFile.xml

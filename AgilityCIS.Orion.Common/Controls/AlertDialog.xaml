@@ -1,0 +1,23 @@
+﻿<controls:ChildWindow x:Class="AgilityCIS.Orion.Common.Controls.AlertDialog"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Width="400" Height="300" 
+           Title="Title"
+           BorderThickness="1" Style="{StaticResource ConfirmationStyle}" 
+            >
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ScrollViewer UseLayoutRounding="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Style="{StaticResource GreenScroll}" VerticalScrollBarVisibility="Auto" Margin="0,0,8,10.666">
+
+            <TextBlock Margin="10,30,10,10" x:Name="messageTextBlock" FontSize="12" TextWrapping="Wrap"></TextBlock>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10" VerticalAlignment="Center">
+            <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Style="{StaticResource LoginButton}" MinWidth="50"/>
+        </StackPanel>
+    </Grid>
+</controls:ChildWindow>

@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5E52A308-0359-4388-8D53-472805CD81C6}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgilityCIS.Orion.Search</RootNamespace>
+    <AssemblyName>AgilityCIS.Orion.Search</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>AgilityCIS.Orion.Search.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>AgilityCIS.Orion.Search.App</SilverlightAppEntry>
+    <TestPageFileName>AgilityCIS.Orion.SearchTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\..\SVN\Feb14\Lib\Microsoft.Practices.Prism.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity">
+      <HintPath>..\..\SVN\Feb14\Lib\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions">
+      <HintPath>..\..\SVN\Feb14\Lib\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.ComponentModel.Composition, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit">
+      <HintPath>C:\Prism\Lib\Silverlight\SilverlightToolkit\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit">
+      <HintPath>C:\Prism\Lib\Silverlight\SilverlightToolkit\System.Windows.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit.Internals">
+      <HintPath>C:\Prism\Lib\Silverlight\SilverlightToolkit\System.Windows.Controls.Toolkit.Internals.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchModule.cs" />
+    <Compile Include="ViewModel\SearchViewModel.cs" />
+    <Compile Include="Views\SearchView.xaml.cs">
+      <DependentUpon>SearchView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\SearchView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AgilityCIS.Orion.Common\AgilityCIS.Orion.Common.csproj">
+      <Project>{B6471917-B1D4-4C3A-9DF5-6CA6CD1328B4}</Project>
+      <Name>AgilityCIS.Orion.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AgilityCIS.Orion.CustomBehaviors\AgilityCIS.Orion.CustomBehaviors.csproj">
+      <Project>{520D98E0-343D-4FA0-84C5-1EB3F17073F5}</Project>
+      <Name>AgilityCIS.Orion.CustomBehaviors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AgilityCIS.Orion.LocalizationManager\AgilityCIS.Orion.LocalizationManager.csproj">
+      <Project>{9FBAC5A8-EB5C-41DA-8C9B-BD6849B01881}</Project>
+      <Name>AgilityCIS.Orion.LocalizationManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AgilityCIS.Orion.Services\AgilityCIS.Orion.Services.csproj">
+      <Project>{3FCDA8A3-D0D5-45A7-86E1-7F0F5F7C966E}</Project>
+      <Name>AgilityCIS.Orion.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AgilityCIS.Orion.Styles\AgilityCIS.Orion.Styles.csproj">
+      <Project>{DD316075-C0A7-4AFF-B626-106DED710980}</Project>
+      <Name>AgilityCIS.Orion.Styles</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\collapse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\top-icon4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\gas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\agility-inner.png" />
+    <Resource Include="Images\arrow-green.png" />
+    <Resource Include="Images\arrow-grey.png" />
+    <Resource Include="Images\bg.png" />
+    <Resource Include="Images\calls.png" />
+    <Resource Include="Images\contact.png" />
+    <Resource Include="Images\documents.png" />
+    <Resource Include="Images\expand.png" />
+    <Resource Include="Images\home-1.png" />
+    <Resource Include="Images\power.png" />
+    <Resource Include="Images\round-arrow.png" />
+    <Resource Include="Images\search.png" />
+    <Resource Include="Images\services.png" />
+    <Resource Include="Images\top-icon1.png" />
+    <Resource Include="Images\top-icon10.png" />
+    <Resource Include="Images\top-icon11.png" />
+    <Resource Include="Images\top-icon2.png" />
+    <Resource Include="Images\top-icon3.png" />
+    <Resource Include="Images\top-icon5.png" />
+    <Resource Include="Images\top-icon6.png" />
+    <Resource Include="Images\top-icon7.png" />
+    <Resource Include="Images\top-icon8.png" />
+    <Resource Include="Images\top-icon9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

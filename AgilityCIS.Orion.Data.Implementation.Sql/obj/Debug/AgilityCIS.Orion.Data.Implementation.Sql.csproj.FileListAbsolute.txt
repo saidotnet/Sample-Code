@@ -1,0 +1,10 @@
+D:\Agility\AgilitySite\Bin\AgilityCIS.Orion.Data.Implementation.Sql.dll
+D:\Agility\AgilitySite\Bin\AgilityCIS.Orion.Data.Implementation.Sql.pdb
+D:\Agility\AgilityCIS.Orion.Data.Implementation.Sql\obj\Debug\ResolveAssemblyReference.cache
+D:\Agility\AgilityCIS.Orion.Data.Implementation.Sql\obj\Debug\AgilityCIS.Orion.Data.Implementation.Sql.dll
+D:\Agility\AgilityCIS.Orion.Data.Implementation.Sql\obj\Debug\AgilityCIS.Orion.Data.Implementation.Sql.pdb
+E:\Agility_New\AgilitySite\Bin\AgilityCIS.Orion.Data.Implementation.Sql.dll
+E:\Agility_New\AgilitySite\Bin\AgilityCIS.Orion.Data.Implementation.Sql.pdb
+E:\Agility_New\AgilityCIS.Orion.Data.Implementation.Sql\obj\Debug\ResolveAssemblyReference.cache
+E:\Agility_New\AgilityCIS.Orion.Data.Implementation.Sql\obj\Debug\AgilityCIS.Orion.Data.Implementation.Sql.dll
+E:\Agility_New\AgilityCIS.Orion.Data.Implementation.Sql\obj\Debug\AgilityCIS.Orion.Data.Implementation.Sql.pdb

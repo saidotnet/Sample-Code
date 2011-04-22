@@ -1,0 +1,82 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:inter ="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      xmlns:behaviors="clr-namespace:AgilityCIS.Orion.CustomBehaviors;assembly=AgilityCIS.Orion.CustomBehaviors"
+	mc:Ignorable="d"
+	x:Class="AgilityCIS.Orion.Common.HeaderPageUC"
+	  xmlns:local="clr-namespace:AgilityCIS.Orion.LocalizationManager;assembly=AgilityCIS.Orion.LocalizationManager"
+	>
+	<UserControl.Resources>
+		  <local:ApplicationResources x:Key="Localization" />
+		    <DataTemplate x:Key="DataTemplate1">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding CustomerName, Mode=Twoway}" Tag="{Binding CustomerNo, Mode=Twoway}"/>
+                </Grid>
+            </DataTemplate>
+            <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+            	<StackPanel/>
+            </ItemsPanelTemplate>
+	</UserControl.Resources>
+
+	<Grid x:Name="LayoutRoot">
+		<Grid >
+                			<Grid.ColumnDefinitions>
+                				<ColumnDefinition Width="30*"/>
+                				<ColumnDefinition Width="40*"/>
+                				<ColumnDefinition Width="0*"/>
+                				<ColumnDefinition Width="20*"/>
+                			</Grid.ColumnDefinitions>
+                			<StackPanel Margin="10,0,0,0" Orientation="Horizontal">
+                				<Button Width="28" Cursor="Hand" VerticalAlignment="Center" Height="28" Style="{StaticResource ExpandButtonStyle}"  HorizontalAlignment="Left" ToolTipService.ToolTip="{Binding ConverterParameter=ltFirst, Converter={StaticResource Localization}, Source={StaticResource Localization}}" x:Name="btnFirst">
+                					<Image Source="/AgilityCIS.Orion.Common;component/Images/expand.png" Cursor="Hand"/>
+                				</Button>
+                				<Button Width="28" Cursor="Hand" VerticalAlignment="Center" Height="28" Style="{StaticResource ExpandButtonStyle}" x:Name="btnPrevious" HorizontalAlignment="Left" ToolTipService.ToolTip="{Binding ConverterParameter=ltPrevious, Converter={StaticResource Localization}, Source={StaticResource Localization}}">
+                					<Image Source="/AgilityCIS.Orion.Common;component/Images/top-icon2.png" Cursor="Hand"/>
+                				</Button>
+                <ComboBox VerticalAlignment="Center" Height="28" Margin="5,0,0,0" Style="{StaticResource WhiteCombo}"  ItemTemplate="{StaticResource DataTemplate1}" MinWidth="120" Width="160" x:Name="drpCustomerName" />
+                				<Button Width="28" Cursor="Hand" VerticalAlignment="Center" Height="28" Style="{StaticResource ExpandButtonStyle}" x:Name="btnNext" ToolTipService.ToolTip="{Binding ConverterParameter=ltNext, Converter={StaticResource Localization}, Source={StaticResource Localization}}">
+                					<Image Source="/AgilityCIS.Orion.Common;component/Images/top-icon3.png" Cursor="Hand"/>
+                				</Button>
+                				<Button Width="28" VerticalAlignment="Center" Cursor="Hand" Height="28" Style="{StaticResource ExpandButtonStyle}" x:Name="btnLast" ToolTipService.ToolTip="{Binding ConverterParameter=ltLast, Converter={StaticResource Localization}, Source={StaticResource Localization}}">
+                					<Image Source="/AgilityCIS.Orion.Common;component/Images/top-icon4.png" Cursor="Hand"/>
+                				</Button>
+                			</StackPanel>
+                			<StackPanel HorizontalAlignment="Left" Margin="10,0,0,0" Orientation="Horizontal" Grid.Column="1">
+
+                				<TextBox x:Name="txtCustNo"  TextWrapping="Wrap" Height="30" Width="160" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource WhiteTextBox}">
+                					<inter:Interaction.Behaviors>
+                						<behaviors:RightClickTrigger/>
+                					</inter:Interaction.Behaviors>
+                				</TextBox>
+
+                				<Button Width="28" x:Name="btnsearch" VerticalAlignment="Center" Cursor="Hand" Height="28" Style="{StaticResource ExpandButtonStyle}" ToolTipService.ToolTip="{Binding ConverterParameter=ltSearchNo, Converter={StaticResource Localization}, Source={StaticResource Localization}}">
+                					<Image Source="/AgilityCIS.Orion.Common;component/Images/top-icon9.png" Cursor="Hand"/>
+                				</Button>
+                				<Button Width="28" VerticalAlignment="Center" Cursor="Hand" Height="28" Style="{StaticResource ExpandButtonStyle}"  ToolTipService.ToolTip="{Binding ConverterParameter=ltCall, Converter={StaticResource Localization}, Source={StaticResource Localization}}">
+                					<Image Source="/AgilityCIS.Orion.Common;component/Images/top-icon8.png" Cursor="Hand"/>
+                				</Button>
+                <Button  x:Name="btnDelete"  Width="28" VerticalAlignment="Center" Cursor="Hand" Height="28" Style="{StaticResource ExpandButtonStyle}"  ToolTipService.ToolTip="{Binding ConverterParameter=ltDelete, Converter={StaticResource Localization}, Source={StaticResource Localization}}">
+                					<Image Source="/AgilityCIS.Orion.Common;component/Images/top-icon11.png" Cursor="Hand"/>
+                				</Button>
+                				<Button Width="28" VerticalAlignment="Center" Cursor="Hand" Height="28" Style="{StaticResource ExpandButtonStyle}"  ToolTipService.ToolTip="{Binding ConverterParameter=ltSave, Converter={StaticResource Localization}, Source={StaticResource Localization}}" x:Name="btnSave">
+                					<Image Source="/AgilityCIS.Orion.Common;component/Images/top-icon6.png" Cursor="Hand"/>
+                				</Button>
+                				<Button Width="28" VerticalAlignment="Center" Cursor="Hand" Height="28" Style="{StaticResource ExpandButtonStyle}"  ToolTipService.ToolTip="{Binding ConverterParameter=ltMail, Converter={StaticResource Localization}, Source={StaticResource Localization}}">
+                					<Image Source="/AgilityCIS.Orion.Common;component/Images/top-icon5.png" Cursor="Hand"/>
+                				</Button>
+                			</StackPanel>
+                			<StackPanel HorizontalAlignment="Right" Margin="0,0,10,0" Orientation="Horizontal" Grid.Column="3">
+                				<ComboBox Width="160" HorizontalAlignment="Left" VerticalAlignment="Center" Height="28" Margin="0" Style="{StaticResource WhiteCombo}"/>
+                				<Button Width="28" Cursor="Hand" VerticalAlignment="Center" Height="28" Style="{StaticResource ExpandButtonStyle}" Margin="5,0,0,0"  ToolTipService.ToolTip="{Binding ConverterParameter=ltAdd, Converter={StaticResource Localization}, Source={StaticResource Localization}}">
+                					<Image Source="/AgilityCIS.Orion.Common;component/Images/top-icon10.png" Cursor="Hand"/>
+                				</Button>
+                				<Button Width="28" VerticalAlignment="Center" Cursor="Hand" Height="28" Style="{StaticResource ExpandButtonStyle}"  ToolTipService.ToolTip="{Binding ConverterParameter=ltRemove, Converter={StaticResource Localization}, Source={StaticResource Localization}}">
+                					<Image Source="/AgilityCIS.Orion.Common;component/Images/top-icon7.png" Cursor="Hand"/>
+                				</Button>
+                			</StackPanel>
+                		</Grid>
+	</Grid>
+</UserControl>

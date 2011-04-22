@@ -1,0 +1,221 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/Agility/!svn/ver/230/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.Customer.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.Customer.datasource
+END
+AgilityCIS.Orion.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Agility/!svn/ver/230/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.xsd
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.TreatmentType.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.TreatmentType.datasource
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.Company.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.Company.datasource
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.CustomerDetails.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.CustomerDetails.datasource
+END
+Reference.svcmap
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/Reference.svcmap
+END
+AgilityCIS.Orion.wsdl
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/Agility/!svn/ver/230/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.wsdl
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.CreditControlStatus.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.CreditControlStatus.datasource
+END
+Agility.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/Agility.xsd
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.BillingUnit.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.BillingUnit.datasource
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.Industry.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.Industry.datasource
+END
+Reference.cs
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Agility/!svn/ver/230/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/Reference.cs
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.RecentCustomerSearchResult.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.RecentCustomerSearchResult.datasource
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.TaxIndicator.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.TaxIndicator.datasource
+END
+Agility.wsdl
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/Agility.wsdl
+END
+configuration.svcinfo
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/configuration.svcinfo
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.Party.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.Party.datasource
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.BillingCycle.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.BillingCycle.datasource
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.InvoiceDelivery.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.InvoiceDelivery.datasource
+END
+Agility1.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/Agility/!svn/ver/230/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/Agility1.xsd
+END
+Agility2.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/Agility2.xsd
+END
+Agility3.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/Agility3.xsd
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.CustomerType.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.CustomerType.datasource
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.CreditCheckScore.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.CreditCheckScore.datasource
+END
+AgilityCIS.Orion.disco
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.disco
+END
+configuration91.svcinfo
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/configuration91.svcinfo
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.CardType.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.CardType.datasource
+END
+Agility.Services.AgilitySvcProxy.BillingCycle.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/Agility.Services.AgilitySvcProxy.BillingCycle.datasource
+END
+AgilityService.wsdl
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/Agility/!svn/ver/230/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityService.wsdl
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.InvoiceStyle.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 152
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.InvoiceStyle.datasource
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.User.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.User.datasource
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.CustomerSummary.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.CustomerSummary.datasource
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.Priority.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.Priority.datasource
+END
+Agility.disco
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/Agility.disco
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.AddressType.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.AddressType.datasource
+END
+AgilityCIS.Orion.Services.AgilitySvcProxy.PayMethod.datasource
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/svn/Agility/!svn/ver/8/AgilityCIS.Orion.Services/Service%20References/AgilitySvcProxy/AgilityCIS.Orion.Services.AgilitySvcProxy.PayMethod.datasource
+END

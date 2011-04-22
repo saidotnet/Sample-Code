@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/Agility/!svn/ver/230/AgilitySite
+END
+ClientAccessPolicy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/Agility/!svn/ver/4/AgilitySite/ClientAccessPolicy.xml
+END
+Crossdomain.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/Agility/!svn/ver/4/AgilitySite/Crossdomain.xml
+END
+Web.config
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/Agility/!svn/ver/230/AgilitySite/Web.config
+END
+StyleCop.Cache
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/Agility/!svn/ver/4/AgilitySite/StyleCop.Cache
+END
+Default.html
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/Agility/!svn/ver/4/AgilitySite/Default.html
+END
+Silverlight.js
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/Agility/!svn/ver/4/AgilitySite/Silverlight.js
+END
+favicon.ico
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/Agility/!svn/ver/4/AgilitySite/favicon.ico
+END

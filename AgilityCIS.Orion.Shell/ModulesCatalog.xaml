@@ -1,0 +1,19 @@
+﻿<Modularity:ModuleCatalog xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                          xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+                          xmlns:Modularity="clr-namespace:Microsoft.Practices.Prism.Modularity;assembly=Microsoft.Practices.Prism">
+
+    <Modularity:ModuleInfoGroup Ref="AgilityCIS.Orion.Shell.xap" InitializationMode="WhenAvailable">
+        <Modularity:ModuleInfo ModuleName="LoginModule"/>
+    </Modularity:ModuleInfoGroup>
+    <Modularity:ModuleInfoGroup Ref="AgilityCIS.Orion.Search.xap" InitializationMode="WhenAvailable">
+        <Modularity:ModuleInfo ModuleName="SearchModule"/>
+    </Modularity:ModuleInfoGroup>
+    <Modularity:ModuleInfoGroup Ref="AgilityCIS.Orion.Customers.xap" InitializationMode="OnDemand">
+        <Modularity:ModuleInfo ModuleName="CustomersModule"/>
+    </Modularity:ModuleInfoGroup>
+    <Modularity:ModuleInfoGroup Ref="AgilityCIS.Orion.Contacts.xap" InitializationMode="OnDemand">
+        <Modularity:ModuleInfo ModuleName="ContactsModule"/>
+    </Modularity:ModuleInfoGroup>
+
+</Modularity:ModuleCatalog>

@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/Agility/!svn/ver/230/AgilityCIS.Orion.Services.DataContracts
+END
+CardType.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/CardType.cs
+END
+InvoiceStyle.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/InvoiceStyle.cs
+END
+User.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/User.cs
+END
+ModuleOption.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/Agility/!svn/ver/83/AgilityCIS.Orion.Services.DataContracts/ModuleOption.cs
+END
+CreditControlStatus.cs
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/CreditControlStatus.cs
+END
+CustomerSummary.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/CustomerSummary.cs
+END
+Product.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/Product.cs
+END
+BillingUnit.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/BillingUnit.cs
+END
+Priority.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/Priority.cs
+END
+Industry.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/Industry.cs
+END
+RecentCustomerSearchResult.cs
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/RecentCustomerSearchResult.cs
+END
+AddressType.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/AddressType.cs
+END
+TaxIndicator.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/TaxIndicator.cs
+END
+PayMethod.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/PayMethod.cs
+END
+Contact.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Agility/!svn/ver/229/AgilityCIS.Orion.Services.DataContracts/Contact.cs
+END
+ExceptionContract.cs
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/ExceptionContract.cs
+END
+AgilityCIS.Orion.Services.DataContracts.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/Agility/!svn/ver/230/AgilityCIS.Orion.Services.DataContracts/AgilityCIS.Orion.Services.DataContracts.csproj
+END
+Party.cs
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/Party.cs
+END
+BillingCycle.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/BillingCycle.cs
+END
+InvoiceDelivery.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/InvoiceDelivery.cs
+END
+Customer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/Customer.cs
+END
+ContactDetails.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Agility/!svn/ver/229/AgilityCIS.Orion.Services.DataContracts/ContactDetails.cs
+END
+CustomerType.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/CustomerType.cs
+END
+CreditCheckScore.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/CreditCheckScore.cs
+END
+TreatmentType.cs
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/TreatmentType.cs
+END
+Company.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/Company.cs
+END
+CustomerDetails.cs
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/CustomerDetails.cs
+END
+Modules.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Agility/!svn/ver/15/AgilityCIS.Orion.Services.DataContracts/Modules.cs
+END

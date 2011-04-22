@@ -1,0 +1,20 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IAgilityService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IAgilityService"
+                contract="AgilitySvcProxy.IAgilityService" name="BasicHttpBinding_IAgilityService" />
+            <endpoint address="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc/SLEndpoint"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IAgilityService"
+                contract="AgilitySvcProxy.IAgilityService" name="BasicHttpBinding_IAgilityService1" />
+        </client>
+    </system.serviceModel>
+</configuration>

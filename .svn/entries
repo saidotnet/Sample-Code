@@ -1,0 +1,298 @@
+10
+
+dir
+228
+http://192.168.1.245/svn/Agility
+http://192.168.1.245/svn/Agility
+
+
+
+2011-04-17T17:17:27.937585Z
+228
+praneeth
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+835c7358-611a-48cc-bf11-dfa014e66799
+
+Agility.CIS.Orion.Contacts.csproj
+file
+
+
+
+
+2011-04-18T04:09:16.327182Z
+b8d8c20c307d3035ab09e139d2d567fd
+2011-04-12T05:45:55.068714Z
+115
+saibaba
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8722
+
+AgilityCIS.Orion.Data.Implementation.Sql
+dir
+
+Agility.CIS.Orion.Contacts
+dir
+
+ContactsModule.cs
+file
+
+
+
+
+2011-04-18T04:09:16.342755Z
+ac8713762e81febdfbce37e6f13d5a3e
+2011-04-12T05:45:55.068714Z
+115
+saibaba
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+374
+
+AgilityCIS.Orion.Services.Interfaces
+dir
+
+ViewModel
+dir
+
+Properties
+dir
+
+AgilityCIS.Orion.Shell
+dir
+
+Views
+dir
+
+Agility.CIS.Orion.Contacts.csproj.user
+file
+
+
+
+
+2011-04-18T04:09:16.373901Z
+1412bcd5ce861315fb45484b91904731
+2011-04-12T05:45:55.068714Z
+115
+saibaba
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1142
+
+AgilityCIS.Orion.CustomBehaviors
+dir
+
+StyleCop.Cache
+file
+
+
+
+
+2011-04-18T04:09:16.420621Z
+8800897990492a5d8538dd7e892771dd
+2011-03-23T07:56:31.405055Z
+16
+agility
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1028
+
+Agility.suo
+file
+
+
+
+
+
+6ed57a6d57b837a71c659436de9faa7e
+2011-04-17T09:44:33.210745Z
+227
+rajiv
+has-props
+
+
+
+
+Agility.suo.r218
+Agility.suo.r228
+
+AgilityCIS.Orion.Styles
+dir
+
+AgilityCIS.Orion.Services
+dir
+
+AgilityCIS.Orion.Data.Interfaces
+dir
+
+AgilityCIS.Orion.Services.SLFaultBehaviour
+dir
+
+AgilityCIS.Orion.Data.Implementation.Oracle
+dir
+
+AgilitySite
+dir
+
+AgilityCIS.Orion.Finance
+dir
+
+AgilityCIS.Orion.DataManager
+dir
+
+AgilityCIS.Orion.Search
+dir
+
+AgilityCIS.Orion.Services.Implementation
+dir
+
+Agility.sln
+file
+
+
+
+
+2011-04-18T04:09:16.420621Z
+63eafd4669edff651b7bf99c983550c5
+2011-04-13T11:26:11.010267Z
+190
+saibaba
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+25975
+
+AgilityCIS.Orion.Services.DataContracts
+dir
+
+Agility
+dir
+
+AgilityCIS.Orion.Contacts
+dir
+
+Images
+dir
+
+Lib
+dir
+
+AgilityCIS.Orion.LocalizationManager
+dir
+
+Bin
+dir
+
+obj
+dir
+
+AgilityCIS.Orion.Common
+dir
+

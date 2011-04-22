@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{99F9651C-E1D4-4820-A8FD-7B7571B7EA06}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgilityCIS.Orion.Services.DataContracts</RootNamespace>
+    <AssemblyName>AgilityCIS.Orion.Services.DataContracts</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BillingCycle.cs" />
+    <Compile Include="CardType.cs" />
+    <Compile Include="AddressType.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="BillingUnit.cs" />
+    <Compile Include="Contact.cs" />
+    <Compile Include="ContactDetails.cs" />
+    <Compile Include="ModuleOption.cs" />
+    <Compile Include="Party.cs" />
+    <Compile Include="Industry.cs" />
+    <Compile Include="CustomerType.cs" />
+    <Compile Include="CreditCheckScore.cs" />
+    <Compile Include="CreditControlStatus.cs" />
+    <Compile Include="CustomerDetails.cs" />
+    <Compile Include="Criteria\CustomerSearchCriteria.cs" />
+    <Compile Include="CustomerSummary.cs" />
+    <Compile Include="ExceptionContract.cs" />
+    <Compile Include="InvoiceDelivery.cs" />
+    <Compile Include="InvoiceStyle.cs" />
+    <Compile Include="Modules.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="PayMethod.cs" />
+    <Compile Include="Priority.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecentCustomerSearchResult.cs" />
+    <Compile Include="TaxIndicator.cs" />
+    <Compile Include="TreatmentType.cs" />
+    <Compile Include="User.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

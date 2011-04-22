@@ -1,0 +1,14 @@
+D:\Agility\AgilityCIS.Orion.Services.Interfaces\bin\Debug\AgilityCIS.Orion.Services.Interfaces.dll
+D:\Agility\AgilityCIS.Orion.Services.Interfaces\bin\Debug\AgilityCIS.Orion.Services.Interfaces.pdb
+D:\Agility\AgilityCIS.Orion.Services.Interfaces\bin\Debug\AgilityCIS.Orion.Services.DataContracts.dll
+D:\Agility\AgilityCIS.Orion.Services.Interfaces\bin\Debug\AgilityCIS.Orion.Services.DataContracts.pdb
+D:\Agility\AgilityCIS.Orion.Services.Interfaces\obj\Debug\ResolveAssemblyReference.cache
+D:\Agility\AgilityCIS.Orion.Services.Interfaces\obj\Debug\AgilityCIS.Orion.Services.Interfaces.dll
+D:\Agility\AgilityCIS.Orion.Services.Interfaces\obj\Debug\AgilityCIS.Orion.Services.Interfaces.pdb
+E:\Agility_New\AgilityCIS.Orion.Services.Interfaces\bin\Debug\AgilityCIS.Orion.Services.Interfaces.dll
+E:\Agility_New\AgilityCIS.Orion.Services.Interfaces\bin\Debug\AgilityCIS.Orion.Services.Interfaces.pdb
+E:\Agility_New\AgilityCIS.Orion.Services.Interfaces\bin\Debug\AgilityCIS.Orion.Services.DataContracts.dll
+E:\Agility_New\AgilityCIS.Orion.Services.Interfaces\bin\Debug\AgilityCIS.Orion.Services.DataContracts.pdb
+E:\Agility_New\AgilityCIS.Orion.Services.Interfaces\obj\Debug\ResolveAssemblyReference.cache
+E:\Agility_New\AgilityCIS.Orion.Services.Interfaces\obj\Debug\AgilityCIS.Orion.Services.Interfaces.dll
+E:\Agility_New\AgilityCIS.Orion.Services.Interfaces\obj\Debug\AgilityCIS.Orion.Services.Interfaces.pdb

@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B6471917-B1D4-4C3A-9DF5-6CA6CD1328B4}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgilityCIS.Orion.Common</RootNamespace>
+    <AssemblyName>AgilityCIS.Orion.Common</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20525.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>..\Lib\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.MefExtensions">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.MefExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Windows.Controls.Toolkit">
+      <HintPath>..\Lib\System.Windows.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit.Internals">
+      <HintPath>..\Lib\System.Windows.Controls.Toolkit.Internals.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseViewModel.cs" />
+    <Compile Include="Controls\ConfirmationDialog.xaml.cs">
+      <DependentUpon>ConfirmationDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AlertDialog.xaml.cs">
+      <DependentUpon>AlertDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomerHeader.xaml.cs">
+      <DependentUpon>CustomerHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WatermarkedTextBox.cs" />
+    <Compile Include="CustomerEventAgg.cs" />
+    <Compile Include="DateTimeConverter.cs" />
+    <Compile Include="Controls\HeaderPageUC.xaml.cs">
+      <DependentUpon>HeaderPageUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultEnterButtonBehavior.cs" />
+    <Compile Include="DoubleClick.cs" />
+    <Compile Include="Enums\EnumReader.cs" />
+    <Compile Include="Enums\Enums.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Popup.xaml.cs">
+      <DependentUpon>Popup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\DialogResult.cs" />
+    <Compile Include="Service\DialogService.cs" />
+    <Compile Include="Service\IDialogService.cs" />
+    <Compile Include="StoreInstance.cs" />
+    <Compile Include="Utilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\ConfirmationDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AlertDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\CustomerHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\HeaderPageUC.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AgilityCIS.Orion.CustomBehaviors\AgilityCIS.Orion.CustomBehaviors.csproj">
+      <Project>{520D98E0-343D-4FA0-84C5-1EB3F17073F5}</Project>
+      <Name>AgilityCIS.Orion.CustomBehaviors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AgilityCIS.Orion.LocalizationManager\AgilityCIS.Orion.LocalizationManager.csproj">
+      <Project>{9FBAC5A8-EB5C-41DA-8C9B-BD6849B01881}</Project>
+      <Name>AgilityCIS.Orion.LocalizationManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AgilityCIS.Orion.Services\AgilityCIS.Orion.Services.csproj">
+      <Project>{3FCDA8A3-D0D5-45A7-86E1-7F0F5F7C966E}</Project>
+      <Name>AgilityCIS.Orion.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\agility-inner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arrow-green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arrow-grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\calls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\collapse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\documents.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\expand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\gas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\home-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\round-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\services.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\top-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\top-icon10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\top-icon11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\top-icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\top-icon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\top-icon4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\top-icon5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\top-icon6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\top-icon7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\top-icon8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\top-icon9.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

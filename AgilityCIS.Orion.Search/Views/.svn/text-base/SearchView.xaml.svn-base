@@ -1,0 +1,811 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+      xmlns:inter ="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      xmlns:behaviors="clr-namespace:AgilityCIS.Orion.CustomBehaviors;assembly=AgilityCIS.Orion.CustomBehaviors"
+    xmlns:System="clr-namespace:System;assembly=mscorlib" 
+     xmlns:local="clr-namespace:AgilityCIS.Orion.LocalizationManager;assembly=AgilityCIS.Orion.LocalizationManager"
+    xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit" 
+    xmlns:Agility_Common="clr-namespace:AgilityCIS.Orion.Common;assembly=AgilityCIS.Orion.Common" 
+    xmlns:AgilityCIS_Orion_Common_Controls="clr-namespace:AgilityCIS.Orion.Common.Controls;assembly=AgilityCIS.Orion.Common" 
+    x:Class="AgilityCIS.Orion.Search.Views.SearchView" 
+    mc:Ignorable="d"
+    Width="Auto" Height="Auto">
+    
+    <UserControl.Resources>
+
+        
+        <ResourceDictionary>
+         
+            <local:ApplicationResources x:Key="Localization" />
+            <Storyboard x:Name="SideReverseAnimation"/>
+            <Storyboard x:Name="Storyboard1"/>
+            <Storyboard x:Name="SideStoryBoard"/>
+            <Storyboard x:Name="Storyboard2"/>
+            <Storyboard x:Name="Storyboard3"/>
+            <Storyboard x:Name="Storyboard4"/>
+            <Storyboard x:Name="Storyboard5"/>
+            <Storyboard x:Name="Storyboard6"/>
+            <Style x:Key="ExpandCollapseButton" TargetType="ToggleButton">
+                <Setter Property="Background" Value="#FF1F3B53"/>
+                <Setter Property="Foreground" Value="#FF000000"/>
+                <Setter Property="Padding" Value="3"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                            <GradientStop Color="#FF617584" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ToggleButton">
+                            <Grid Width="18" Height="18">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver"/>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <ColorAnimation Duration="0" To="#FF6DBDD1" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Background"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled"/>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="CheckStates">
+                                        <VisualState x:Name="Checked">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="PlusIcon">
+                                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                                        <DiscreteObjectKeyFrame.Value>
+                                                            <Visibility>Collapsed</Visibility>
+                                                        </DiscreteObjectKeyFrame.Value>
+                                                    </DiscreteObjectKeyFrame>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Unchecked"/>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Focused"/>
+                                        <VisualState x:Name="Unfocused"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Border x:Name="Background" BorderThickness="{TemplateBinding BorderThickness}" Background="White" CornerRadius="3">
+                                    <Grid Margin="1"/>
+                                </Border>
+                                <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Content=""/>
+                                <Border BorderThickness="1" Background="#FF9A9C9B">
+                                    <Grid>
+                                        <Rectangle Fill="White" Margin="3,7" Stroke="White" RenderTransformOrigin="0.5,0.5"/>
+                                        <Rectangle Fill="White" Margin="3,7" Stroke="White" RenderTransformOrigin="0.5,0.5" x:Name="PlusIcon">
+                                            <Rectangle.RenderTransform>
+                                                <CompositeTransform Rotation="90"/>
+                                            </Rectangle.RenderTransform>
+                                        </Rectangle>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="GasButton" TargetType="Button">
+                <Setter Property="Background" Value="#FF1F3B53"/>
+                <Setter Property="Foreground" Value="#FF000000"/>
+                <Setter Property="Padding" Value="3"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                            <GradientStop Color="#FF617584" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundAnimation"/>
+                                                <ColorAnimation Duration="0" To="#F2FFFFFF" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                                <ColorAnimation Duration="0" To="#CCFFFFFF" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                                <ColorAnimation Duration="0" To="#7FFFFFFF" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <ColorAnimation Duration="0" To="#FF6DBDD1" Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Background"/>
+                                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundAnimation"/>
+                                                <ColorAnimation Duration="0" To="#D8FFFFFF" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                                <ColorAnimation Duration="0" To="#C6FFFFFF" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                                <ColorAnimation Duration="0" To="#8CFFFFFF" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                                <ColorAnimation Duration="0" To="#3FFFFFFF" Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Color)" Storyboard.TargetName="BackgroundGradient"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To=".55" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledVisualElement"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Focused">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualElement"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Unfocused"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Border x:Name="Background" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="White" CornerRadius="3">
+                                    <Grid Background="{TemplateBinding Background}" Margin="1">
+                                        <Border x:Name="BackgroundAnimation" Background="#FF448DCA" Opacity="0"/>
+                                        <Rectangle x:Name="BackgroundGradient">
+                                            <Rectangle.Fill>
+                                                <LinearGradientBrush EndPoint=".7,1" StartPoint=".7,0">
+                                                    <GradientStop Color="#FFFFFFFF" Offset="0"/>
+                                                    <GradientStop Color="#F9FFFFFF" Offset="0.375"/>
+                                                    <GradientStop Color="#E5FFFFFF" Offset="0.625"/>
+                                                    <GradientStop Color="#C6FFFFFF" Offset="1"/>
+                                                </LinearGradientBrush>
+                                            </Rectangle.Fill>
+                                        </Rectangle>
+                                    </Grid>
+                                </Border>
+                                <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Rectangle x:Name="DisabledVisualElement" Fill="#FFFFFFFF" IsHitTestVisible="false" Opacity="0" RadiusY="3" RadiusX="3"/>
+                                <Rectangle x:Name="FocusVisualElement" IsHitTestVisible="false" Margin="1" Opacity="0" RadiusY="2" RadiusX="2" Stroke="#FF6DBDD1" StrokeThickness="1"/>
+                                <Image HorizontalAlignment="Left" Height="20" Width="20" Source="/AgilityCIS.Orion.Search;component/Images/gas.png"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <DataTemplate x:Key="ItemTemplate">
+                <StackPanel>
+                    <HyperlinkButton   Foreground="{StaticResource DarkGreen}" FontSize="12" d:LayoutOverrides="Height" VerticalAlignment="Center" HorizontalAlignment="Left" Content="{Binding CustomerName}" />
+
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="ProductsTemplate">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+                    <Button  Margin="0,0,0,0"  Height="22" HorizontalAlignment="Left" Width="50" Style="{StaticResource GasButton}" Content="Gas" Foreground="{StaticResource DarkGreen}" FontSize="12"/>
+                    <TextBlock HorizontalAlignment="Left"  TextWrapping="Wrap" Text="{Binding ProductDesc, Mode=OneWay}" d:LayoutOverrides="Height" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding SiteAddress, Mode=OneWay}" d:LayoutOverrides="Height" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                </StackPanel>
+            </DataTemplate>
+
+            <DataTemplate x:Key="SearchDataTemplate" >
+               
+
+                <Border Cursor="Hand"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0" CornerRadius="8">
+                    <Border.Resources>
+                        <Storyboard x:Name="Storyboard1">
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnView">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.1">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Name="Storyboard2">
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnView">
+                                <DiscreteObjectKeyFrame KeyTime="0:0:0.1">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Collapsed</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </Border.Resources>
+
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseEnter">
+                            <ei:ControlStoryboardAction Storyboard="{StaticResource Storyboard1}"/>
+                        </i:EventTrigger>
+                        <i:EventTrigger EventName="MouseLeave">
+                            <ei:ControlStoryboardAction Storyboard="{StaticResource Storyboard2}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="35"/>
+                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="70"/>
+                        </Grid.ColumnDefinitions>
+                        <ToggleButton Grid.Column="0"  Content="ToggleButton" d:LayoutOverrides="Width, Height" HorizontalAlignment="Left" Style="{StaticResource ExpandCollapseButton}" Margin="15,0,0,0">
+                            <inter:Interaction.Triggers>
+                                <inter:EventTrigger EventName="Checked">
+                                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=grid}" PropertyName="Visibility"/>
+                                </inter:EventTrigger>
+                                <inter:EventTrigger EventName="Unchecked">
+                                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=grid}" PropertyName="Visibility">
+                                        <ei:ChangePropertyAction.Value>
+                                            <Visibility>Collapsed</Visibility>
+                                        </ei:ChangePropertyAction.Value>
+                                    </ei:ChangePropertyAction>
+                                </inter:EventTrigger>
+                            </inter:Interaction.Triggers>
+                        </ToggleButton>
+
+                        <Image Grid.Column="1" HorizontalAlignment="Left" Stretch="None" Width="30" Height="30" Source="/AgilityCIS.Orion.Search;component/Images/home.png" d:LayoutOverrides="Width"/>
+                        <TextBlock TextWrapping="Wrap" Grid.Column="2" VerticalAlignment="Center"   Foreground="{StaticResource DarkGreen}" FontSize="12"  Text="{Binding CustomerNo}"/>
+                        <TextBlock TextWrapping="Wrap" Grid.Column="3" VerticalAlignment="Center"   Foreground="{StaticResource DarkGreen}" FontSize="12"  Text=":" />
+                        <TextBlock TextWrapping="Wrap" Grid.Column="4" VerticalAlignment="Center"   Margin="5,0,0,0"  Foreground="{StaticResource DarkGreen}" FontSize="12"  Text="{Binding CustomerName}" />
+                        <TextBlock TextWrapping="Wrap" Grid.Column="5"  Foreground="{StaticResource DarkGreen}" FontSize="12"  Text=""/>
+                        <Button x:Name="btnView" Visibility="Collapsed" Grid.Column="6"   Content="{Binding ConverterParameter=ltView, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Command="{Binding DataContext.LoadCustomerCommand, ElementName=LayoutRoot}" VerticalAlignment="Center" CommandParameter="{Binding CustomerNo}" Style="{StaticResource GreenButton}" Width="50" HorizontalAlignment="Right" Margin="0,0,15,0"/>
+                        <Grid x:Name="grid" Grid.ColumnSpan="6" Margin="35,0,0,0"  Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Visibility="Collapsed">
+                            <ListBox ItemsSource="{Binding Products}" SelectedItem="{Binding DataContext.SelectedProduct, ElementName=LayoutRoot, Mode=TwoWay}"  ItemTemplate="{StaticResource ProductsTemplate}"	HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="{x:Null}" BorderBrush="{x:Null}" />
+                        </Grid>
+                    </Grid>
+
+
+
+                  
+
+                </Border>
+            </DataTemplate>
+            <Style x:Key="SearchListBox" TargetType="ListBox">
+                <Setter Property="Padding" Value="1"/>
+                <Setter Property="Background" Value="#FFFFFFFF"/>
+                <Setter Property="Foreground" Value="#FF000000"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="VerticalContentAlignment" Value="Top"/>
+                <Setter Property="IsTabStop" Value="False"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="TabNavigation" Value="Once"/>
+                <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                            <GradientStop Color="#FF617584" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ListBox">
+                            <Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="ValidationStates">
+                                        <VisualState x:Name="Valid"/>
+                                        <VisualState x:Name="InvalidUnfocused">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ValidationErrorElement">
+                                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                                        <DiscreteObjectKeyFrame.Value>
+                                                            <Visibility>Visible</Visibility>
+                                                        </DiscreteObjectKeyFrame.Value>
+                                                    </DiscreteObjectKeyFrame>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="InvalidFocused">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility" Storyboard.TargetName="ValidationErrorElement">
+                                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                                        <DiscreteObjectKeyFrame.Value>
+                                                            <Visibility>Visible</Visibility>
+                                                        </DiscreteObjectKeyFrame.Value>
+                                                    </DiscreteObjectKeyFrame>
+                                                </ObjectAnimationUsingKeyFrames>
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="IsOpen" Storyboard.TargetName="validationTooltip">
+                                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                                        <DiscreteObjectKeyFrame.Value>
+                                                            <System:Boolean>True</System:Boolean>
+                                                        </DiscreteObjectKeyFrame.Value>
+                                                    </DiscreteObjectKeyFrame>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2">
+                                    <ScrollViewer x:Name="ScrollViewer" BorderBrush="Transparent" BorderThickness="0" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" TabNavigation="{TemplateBinding TabNavigation}" Style="{StaticResource GreenScroll}">
+                                        <ItemsPresenter/>
+                                    </ScrollViewer>
+                                </Border>
+                                <Border x:Name="ValidationErrorElement" BorderBrush="#FFDB000C" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2" Visibility="Collapsed">
+                                    <ToolTipService.ToolTip>
+                                        <ToolTip x:Name="validationTooltip" DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}" Placement="Right" PlacementTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}" Template="{StaticResource ValidationToolTipTemplate}">
+                                            <ToolTip.Triggers>
+                                                <EventTrigger RoutedEvent="Canvas.Loaded">
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="IsHitTestVisible" Storyboard.TargetName="validationTooltip">
+                                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                                    <DiscreteObjectKeyFrame.Value>
+                                                                        <System:Boolean>true</System:Boolean>
+                                                                    </DiscreteObjectKeyFrame.Value>
+                                                                </DiscreteObjectKeyFrame>
+                                                            </ObjectAnimationUsingKeyFrames>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </EventTrigger>
+                                            </ToolTip.Triggers>
+                                        </ToolTip>
+                                    </ToolTipService.ToolTip>
+                                    <Grid Background="Transparent" HorizontalAlignment="Right" Height="10" Margin="0,-4,-4,0" VerticalAlignment="Top" Width="10">
+                                        <Path Data="M 1,0 L6,0 A 2,2 90 0 1 8,2 L8,7 z" Fill="#FFDC000C" Margin="-1,3,0,0"/>
+                                        <Path Data="M 0,0 L2,0 L 8,6 L8,8" Fill="#ffffff" Margin="-1,3,0,0"/>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="ListBoxItemStyle1" TargetType="ListBoxItem">
+                <Setter Property="Padding" Value="3"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="VerticalContentAlignment" Value="Top"/>
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="TabNavigation" Value="Local"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ListBoxItem">
+                            <Grid Background="{TemplateBinding Background}" Cursor="Hand">
+                                <inter:Interaction.Triggers>
+                                    <Agility_Common:DoubleClickTrigger>
+                                        <inter:InvokeCommandAction Command="{Binding DataContext.LoadCustomerCommand, ElementName=LayoutRoot}" CommandParameter="{Binding CustomerNo}"/>
+                                    </Agility_Common:DoubleClickTrigger>
+
+                                </inter:Interaction.Triggers>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To=".35" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="fillColor"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To=".55" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="contentPresenter"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="SelectionStates">
+                                        <VisualState x:Name="Unselected"/>
+                                        <VisualState x:Name="Selected">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To=".75" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="fillColor2"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Focused">
+                                            <Storyboard>
+                                                <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="Visibility" Storyboard.TargetName="FocusVisualElement">
+                                                    <DiscreteObjectKeyFrame KeyTime="0">
+                                                        <DiscreteObjectKeyFrame.Value>
+                                                            <Visibility>Visible</Visibility>
+                                                        </DiscreteObjectKeyFrame.Value>
+                                                    </DiscreteObjectKeyFrame>
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Unfocused"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Rectangle x:Name="fillColor" Fill="#FFBADDE9" IsHitTestVisible="False" Opacity="0" RadiusY="1" RadiusX="1"/>
+                                <Rectangle x:Name="fillColor2" Fill="#FFBADDE9" IsHitTestVisible="False" Opacity="0" RadiusY="1" RadiusX="1"/>
+                                <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}"/>
+                                <Rectangle x:Name="FocusVisualElement" RadiusY="1" RadiusX="1" Stroke="#FF6DBDD1" StrokeThickness="1" Visibility="Collapsed"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="ExpandCollapseToggleButtonStyle" TargetType="ToggleButton">
+                <Setter Property="Background" Value="#FF1F3B53"/>
+                <Setter Property="Foreground" Value="#FF000000"/>
+                <Setter Property="Padding" Value="3"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="BorderBrush">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                            <GradientStop Color="#FF617584" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ToggleButton">
+                            <Grid>
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal"/>
+                                        <VisualState x:Name="MouseOver">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundAnimation"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BackgroundAnimation"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To=".55" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="DisabledVisualElement"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="CheckStates">
+                                        <VisualState x:Name="Checked"/>
+                                        <VisualState x:Name="Unchecked"/>
+                                    </VisualStateGroup>
+                                    <VisualStateGroup x:Name="FocusStates">
+                                        <VisualState x:Name="Focused">
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="FocusVisualElement"/>
+                                            </Storyboard>
+                                        </VisualState>
+                                        <VisualState x:Name="Unfocused"/>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Border x:Name="Background" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="3">
+                                    <Grid Background="{TemplateBinding Background}" Margin="1">
+                                        <Border x:Name="BackgroundAnimation" Opacity="0"/>
+                                        <Rectangle x:Name="BackgroundGradient"/>
+                                    </Grid>
+                                </Border>
+                                <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                <Rectangle x:Name="DisabledVisualElement" Fill="#FFFFFFFF" IsHitTestVisible="false" Opacity="0" RadiusY="3" RadiusX="3"/>
+                                <Rectangle x:Name="FocusVisualElement" IsHitTestVisible="false" Margin="1" Opacity="0" RadiusY="2" RadiusX="2" Stroke="#FF6DBDD1" StrokeThickness="1"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <DataTemplate x:Key="DataTemplate1">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding CustomerName, Mode=Twoway}" Tag="{Binding CustomerNo, Mode=Twoway}"/>
+                </Grid>
+            </DataTemplate>
+            <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+                <StackPanel/>
+            </ItemsPanelTemplate>
+
+        </ResourceDictionary>
+
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot">
+        <controlsToolkit:BusyIndicator Style="{StaticResource BusyIndicatorStyle2}"
+				IsBusy="{Binding IsBusy, Mode=OneWay}"
+				DisplayAfter="0"
+				BusyContent="Please wait...">
+
+            <ScrollViewer Style="{StaticResource GreenScroll}" VerticalScrollBarVisibility="Auto" Height="540" Width="Auto" >
+                <Grid x:Name="RightGrid_Content" Margin="0" >
+
+                    <sdk:TabControl Margin="0" Grid.Row="0" Background="{x:Null}">
+                        <sdk:TabItem x:Name="tabItem2" Header="{Binding ConverterParameter=ltSearch, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Style="{StaticResource TabItemStyle1}" Width="120">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Border Background="White" CornerRadius="8">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="45"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Border HorizontalAlignment="Left" Width="180" Grid.Row="0" Grid.Column="0" Background="{StaticResource LightGreenBrushBorder}" CornerRadius="10" Margin="18,7,0,8" d:LayoutOverrides="GridBox">
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding ConverterParameter=ltFilterCriteria, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DarkGreen}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                                        </Border>
+                                        <Border Grid.Row="1">
+
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="120"/>
+                                                    <ColumnDefinition Width="33*"/>
+                                                    <ColumnDefinition Width="120"/>
+                                                    <ColumnDefinition Width="33*"/>
+                                                    <ColumnDefinition Width="90"/>
+                                                    <ColumnDefinition Width="33*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="35"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="35"/>
+                                                </Grid.RowDefinitions>
+
+                                                <Border Grid.ColumnSpan="6" HorizontalAlignment="Stretch"  CornerRadius="8" VerticalAlignment="Stretch" Grid.Row="1">
+                                                    <Grid  x:Name="SearchBorder">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="120"/>
+                                                            <ColumnDefinition Width="33*"/>
+                                                            <ColumnDefinition Width="120"/>
+                                                            <ColumnDefinition Width="33*"/>
+                                                            <ColumnDefinition Width="90"/>
+                                                            <ColumnDefinition Width="33*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="35"/>
+                                                            <RowDefinition Height="35"/>
+                                                            <RowDefinition Height="35"/>
+                                                            <RowDefinition Height="35"/>
+                                                        </Grid.RowDefinitions>
+                                                        <TextBlock Text="{Binding ConverterParameter=ltPhoneNo, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" />
+                                                        <Agility_Common:WatermarkedTextBox Style="{StaticResource GreyTextBox}" IsUpdateImmediate="True" Watermark=""  Grid.Column="1" Text="{Binding CustomerSearchCriteria.Phone, Mode=TwoWay}" Height="26" VerticalAlignment="Center"  Margin="0,0,10,0" >
+                                                            <inter:Interaction.Triggers>
+                                                                <inter:EventTrigger EventName="KeyDown">
+                                                                    <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch"/>
+                                                                </inter:EventTrigger>
+                                                            </inter:Interaction.Triggers>
+                                                        </Agility_Common:WatermarkedTextBox>
+                                                        <TextBlock Text="{Binding ConverterParameter=ltMeterNo, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Grid.Row="1"/>
+                                                        <Agility_Common:WatermarkedTextBox Text="{Binding CustomerSearchCriteria.MeterNo, Mode=TwoWay}"  Style="{StaticResource GreyTextBox}" IsUpdateImmediate="True" Watermark=""  Grid.Column="1"  Height="26" Grid.Row="1" VerticalAlignment="Center" Margin="0,0,10,0" >
+                                                            <inter:Interaction.Triggers>
+                                                                <inter:EventTrigger EventName="KeyDown">
+                                                                    <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch"/>
+                                                                </inter:EventTrigger>
+                                                            </inter:Interaction.Triggers>
+                                                        </Agility_Common:WatermarkedTextBox>
+                                                        <TextBlock Text="{Binding ConverterParameter=ltContact, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Grid.Row="2"/>
+                                                        <Agility_Common:WatermarkedTextBox Style="{StaticResource GreyTextBox}" IsUpdateImmediate="True" Watermark=""  Grid.Column="1" Grid.Row="2" Text="{Binding CustomerSearchCriteria.Contact, Mode=TwoWay}" Height="26" Margin="0,0,10,0" >
+                                                            <inter:Interaction.Triggers>
+                                                                <inter:EventTrigger EventName="KeyDown">
+                                                                    <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch"/>
+                                                                </inter:EventTrigger>
+                                                            </inter:Interaction.Triggers>
+                                                        </Agility_Common:WatermarkedTextBox>
+                                                        <CheckBox IsChecked="{Binding CustomerSearchCriteria.IsInclLease, Mode=TwoWay}" Content="" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0,1,0,0" Grid.Row="3" Grid.Column="1"/>
+                                                        <TextBlock Text="{Binding ConverterParameter=ltPremisesIP, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" Grid.Row="1" Grid.Column="2"/>
+                                                        <Agility_Common:WatermarkedTextBox Text="{Binding CustomerSearchCriteria.Premise, Mode=TwoWay}"  Style="{StaticResource GreyTextBox}" IsUpdateImmediate="True" Watermark=""  Grid.Column="3"  Height="26" Grid.Row="1" VerticalAlignment="Center"  Margin="0,0,10,0" >
+                                                            <inter:Interaction.Triggers>
+                                                                <inter:EventTrigger EventName="KeyDown">
+                                                                    <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch"/>
+                                                                </inter:EventTrigger>
+                                                            </inter:Interaction.Triggers>
+                                                        </Agility_Common:WatermarkedTextBox>
+                                                        <TextBlock Text="{Binding ConverterParameter=ltSalesCode, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" Grid.Row="2" Grid.Column="2"/>
+                                                        <Agility_Common:WatermarkedTextBox Style="{StaticResource GreyTextBox}" IsUpdateImmediate="True" Watermark=""  Text="{Binding CustomerSearchCriteria.SalesCode, Mode=TwoWay}" Grid.Column="3"  Height="26" Grid.Row="2" VerticalAlignment="Center" Margin="0,0,10,0" >
+                                                            <inter:Interaction.Triggers>
+                                                                <inter:EventTrigger EventName="KeyDown">
+                                                                    <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch"/>
+                                                                </inter:EventTrigger>
+                                                            </inter:Interaction.Triggers>
+                                                        </Agility_Common:WatermarkedTextBox>
+                                                        <TextBlock Text="{Binding ConverterParameter=ltProperty, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" Grid.Row="2" Grid.Column="4"/>
+                                                        <Agility_Common:WatermarkedTextBox Style="{StaticResource GreyTextBox}" IsUpdateImmediate="True" Watermark="" Text="{Binding CustomerSearchCriteria.PropertyName, Mode=TwoWay}" Grid.Column="5"  Height="26" Grid.Row="2" VerticalAlignment="Center" Margin="0,0,10,0" >
+                                                            <inter:Interaction.Triggers>
+                                                                <inter:EventTrigger EventName="KeyDown">
+                                                                    <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch"/>
+                                                                </inter:EventTrigger>
+                                                            </inter:Interaction.Triggers>
+                                                        </Agility_Common:WatermarkedTextBox>
+                                                        <TextBlock Text="{Binding ConverterParameter=ltStreetName, Converter={StaticResource Localization}, Source={StaticResource Localization}}"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" Grid.Column="4"/>
+                                                        <Agility_Common:WatermarkedTextBox Style="{StaticResource GreyTextBox}" IsUpdateImmediate="True" Watermark="" Text="{Binding CustomerSearchCriteria.StreetName, Mode=TwoWay}" Grid.Column="5"  Height="26" VerticalAlignment="Center"  Margin="0,0,10,0" >
+                                                            <inter:Interaction.Triggers>
+                                                                <inter:EventTrigger EventName="KeyDown">
+                                                                    <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch"/>
+                                                                </inter:EventTrigger>
+                                                            </inter:Interaction.Triggers>
+                                                        </Agility_Common:WatermarkedTextBox>
+                                                        <TextBlock Text="{Binding ConverterParameter=ltNo, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" Grid.Row="1" Grid.Column="4"/>
+                                                        <Agility_Common:WatermarkedTextBox Style="{StaticResource GreyTextBox}" IsUpdateImmediate="True" Watermark="" Text="{Binding CustomerSearchCriteria.StreetNo, Mode=TwoWay}" Grid.Column="5"  Height="26" Grid.Row="1" VerticalAlignment="Center"  Margin="0,0,10,0" >
+                                                            <inter:Interaction.Triggers>
+                                                                <inter:EventTrigger EventName="KeyDown">
+                                                                    <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch"/>
+                                                                </inter:EventTrigger>
+                                                            </inter:Interaction.Triggers>
+                                                        </Agility_Common:WatermarkedTextBox>
+                                                        <TextBlock Text="{Binding ConverterParameter=ltInclLease, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Grid.Row="3"/>
+                                                        <CheckBox Content="{Binding ConverterParameter=ltCurrentaccountsonly, Converter={StaticResource Localization}, Source={StaticResource Localization}}" IsChecked="{Binding CustomerSearchCriteria.IsCurrentAccount, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0,1,0,0" Grid.Column="3"/>
+
+                                                    </Grid>
+
+                                                </Border>
+                                                <StackPanel Orientation="Horizontal" Grid.Column="5" Grid.Row="3" VerticalAlignment="Center"  HorizontalAlignment="Right" Margin="0,0,10,0" >
+                                                    <Button x:Name="btnSearch" Content="{Binding ConverterParameter=ltSearch, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Style="{StaticResource GreenButton}" Height="28" Command="{Binding SearchCommand}" Cursor="Hand" ToolTipService.ToolTip="{Binding ConverterParameter=ltSearch, Converter={StaticResource Localization}, Source={StaticResource Localization}}" MinWidth="65"/>
+                                                    <Button Content="{Binding ConverterParameter=ltClear, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Style="{StaticResource GreenButton}" Height="28" Command="{Binding ClearCommand}" Margin="10,0,0,0" Cursor="Hand" ToolTipService.ToolTip="{Binding ConverterParameter=ltClear, Converter={StaticResource Localization}, Source={StaticResource Localization}}" MinWidth="65"/>
+                                                </StackPanel>
+                                                <TextBlock Text="{Binding ConverterParameter=ltRecent, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" />
+                                                <ComboBox SelectedItem="{Binding RecentCustomerSearch, Mode=TwoWay}" 
+        											SelectedValue="{Binding RecentCustomerSearch.SearchSeqPartyCode, Mode=TwoWay}"  SelectedValuePath="SearchSeqPartyCode" 
+        											ItemsSource="{Binding RecentCustomerSearchResults}" DisplayMemberPath="Display" Grid.Column="1"  Height="26" VerticalAlignment="Center" Style="{StaticResource GreyCombo}" Margin="0,0,10,0"/>
+                                                <TextBlock Text="{Binding ConverterParameter=ltCustomerNo, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" Grid.Column="2" />
+                                                <Agility_Common:WatermarkedTextBox Style="{StaticResource GreyTextBox}" IsUpdateImmediate="True" Watermark="" Grid.Column="3" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" Height="26" VerticalAlignment="Center"  Margin="0,0,10,0">
+                                                    <inter:Interaction.Triggers>
+                                                        <inter:EventTrigger EventName="KeyDown">
+                                                            <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch"/>
+                                                        </inter:EventTrigger>
+                                                    </inter:Interaction.Triggers>
+
+                                                </Agility_Common:WatermarkedTextBox>
+                                                <TextBlock Text="{Binding ConverterParameter=ltClientName, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" Grid.Column="4" />
+                                                <Agility_Common:WatermarkedTextBox Style="{StaticResource GreyTextBox}" IsUpdateImmediate="True" Watermark=""  Text="{Binding CustomerSearchCriteria.ClientName, Mode=TwoWay}" Grid.Column="5" Height="26" VerticalAlignment="Center" Margin="0,0,10,0">
+                                                    <inter:Interaction.Triggers>
+                                                        <inter:EventTrigger EventName="KeyDown">
+                                                            <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch"/>
+                                                        </inter:EventTrigger>
+                                                    </inter:Interaction.Triggers>
+
+                                                </Agility_Common:WatermarkedTextBox>
+                                            </Grid>
+
+                                        </Border>
+                                        <ToggleButton IsChecked="False" Width="25" VerticalAlignment="Center" Cursor="Hand" Height="25"  HorizontalAlignment="Right" Margin="0,0,10,0" Style="{StaticResource ExpandCollapseToggleButtonStyle}" x:Name="ToggleButton2">
+                                            <inter:Interaction.Triggers>
+                                                <inter:EventTrigger EventName="Checked">
+                                                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchBorder}" PropertyName="Visibility">
+                                                        <ei:ChangePropertyAction.Value>
+                                                            <Visibility>Collapsed</Visibility>
+                                                        </ei:ChangePropertyAction.Value>
+                                                    </ei:ChangePropertyAction>
+                                                    <ei:ChangePropertyAction PropertyName="Visibility" TargetObject="{Binding ElementName=Expand}">
+                                                        <ei:ChangePropertyAction.Value>
+                                                            <Visibility>Visible</Visibility>
+                                                        </ei:ChangePropertyAction.Value>
+                                                    </ei:ChangePropertyAction>
+                                                    <ei:ChangePropertyAction PropertyName="Visibility" TargetObject="{Binding ElementName=Collapse}">
+                                                        <ei:ChangePropertyAction.Value>
+                                                            <Visibility>Collapsed</Visibility>
+                                                        </ei:ChangePropertyAction.Value>
+                                                    </ei:ChangePropertyAction>
+                                                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=listBox}" PropertyName="Height" Value="281"/>
+                                                </inter:EventTrigger>
+                                                <inter:EventTrigger EventName="Unchecked">
+                                                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchBorder}" PropertyName="Visibility">
+                                                        <ei:ChangePropertyAction.Value>
+                                                            <Visibility>Visible</Visibility>
+                                                        </ei:ChangePropertyAction.Value>
+                                                    </ei:ChangePropertyAction>
+                                                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=listBox}" PropertyName="Height" Value="100"/>
+                                                    <ei:ChangePropertyAction PropertyName="Visibility" TargetObject="{Binding ElementName=Expand}">
+                                                        <ei:ChangePropertyAction.Value>
+                                                            <Visibility>Collapsed</Visibility>
+                                                        </ei:ChangePropertyAction.Value>
+                                                    </ei:ChangePropertyAction>
+                                                    <ei:ChangePropertyAction PropertyName="Visibility" TargetObject="{Binding ElementName=Collapse}">
+                                                        <ei:ChangePropertyAction.Value>
+                                                            <Visibility>Visible</Visibility>
+                                                        </ei:ChangePropertyAction.Value>
+                                                    </ei:ChangePropertyAction>
+                                                </inter:EventTrigger>
+                                            </inter:Interaction.Triggers>
+                                            <Grid >
+                                                <Image x:Name="Expand" Source="/AgilityCIS.Orion.Search;component/Images/top-icon4.png" Visibility="Collapsed"/>
+                                                <Image x:Name="Collapse" Source="/AgilityCIS.Orion.Search;component/Images/Collapse.png" Cursor="Hand"/>
+                                            </Grid>
+                                        </ToggleButton>
+                                    </Grid>
+                                </Border>
+                                <Border HorizontalAlignment="Stretch" Margin="0,15,0,0" Grid.Row="2" VerticalAlignment="Stretch" Background="White" CornerRadius="8" >
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="40"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Border HorizontalAlignment="Left" Width="180" Grid.Row="0" Grid.Column="0" Background="{StaticResource LightGreenBrushBorder}" CornerRadius="10" Margin="18,7,0,3">
+                                            <TextBlock TextWrapping="Wrap" Text="{Binding ConverterParameter=ltSearchResults, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DarkGreen}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                                        </Border>
+                                        <ToggleButton Visibility="Collapsed" x:Name="toggleButton1" Width="25" VerticalAlignment="Center" Cursor="Hand" Height="25"  HorizontalAlignment="Right" Style="{StaticResource ExpandCollapseToggleButtonStyle}" Margin="0,0,10,0">
+                                            <inter:Interaction.Triggers>
+                                                <inter:EventTrigger EventName="Checked">
+                                                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchResults}" PropertyName="Visibility">
+                                                        <ei:ChangePropertyAction.Value>
+                                                            <Visibility>Collapsed</Visibility>
+                                                        </ei:ChangePropertyAction.Value>
+                                                    </ei:ChangePropertyAction>
+                                                    <ei:ChangePropertyAction PropertyName="Visibility" TargetObject="{Binding ElementName=Expand1}">
+                                                        <ei:ChangePropertyAction.Value>
+                                                            <Visibility>Visible</Visibility>
+                                                        </ei:ChangePropertyAction.Value>
+                                                    </ei:ChangePropertyAction>
+                                                    <ei:ChangePropertyAction PropertyName="Visibility" TargetObject="{Binding ElementName=Collapse1}">
+                                                        <ei:ChangePropertyAction.Value>
+                                                            <Visibility>Collapsed</Visibility>
+                                                        </ei:ChangePropertyAction.Value>
+                                                    </ei:ChangePropertyAction>
+
+                                                </inter:EventTrigger>
+                                                <inter:EventTrigger EventName="Unchecked">
+                                                    <ei:ChangePropertyAction TargetObject="{Binding ElementName=SearchResults}" PropertyName="Visibility">
+                                                        <ei:ChangePropertyAction.Value>
+                                                            <Visibility>Visible</Visibility>
+                                                        </ei:ChangePropertyAction.Value>
+                                                    </ei:ChangePropertyAction>
+                                                    <ei:ChangePropertyAction PropertyName="Visibility" TargetObject="{Binding ElementName=Expand1}">
+                                                        <ei:ChangePropertyAction.Value>
+                                                            <Visibility>Collapsed</Visibility>
+                                                        </ei:ChangePropertyAction.Value>
+                                                    </ei:ChangePropertyAction>
+                                                    <ei:ChangePropertyAction PropertyName="Visibility" TargetObject="{Binding ElementName=Collapse1}">
+                                                        <ei:ChangePropertyAction.Value>
+                                                            <Visibility>Visible</Visibility>
+                                                        </ei:ChangePropertyAction.Value>
+                                                    </ei:ChangePropertyAction>
+
+                                                </inter:EventTrigger>
+                                            </inter:Interaction.Triggers>
+                                            <Grid>
+                                                <Image x:Name="Expand1" Source="/AgilityCIS.Orion.Search;component/Images/top-icon4.png" Visibility="Collapsed"/>
+                                                <Image x:Name="Collapse1" Source="/AgilityCIS.Orion.Search;component/Images/Collapse.png" Cursor="Hand"/>
+                                            </Grid>
+                                        </ToggleButton>
+                                        <StackPanel Grid.RowSpan="2" Grid.Row="1" x:Name="SearchResults" Margin="0,5">
+                                            <Border Height="40" CornerRadius="0" Margin="0">
+                                                <Border.Background>
+                                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                        <GradientStop Color="#FF52CF84" Offset="0"/>
+                                                        <GradientStop Color="#FF4AC77B" Offset="1"/>
+                                                        <GradientStop Color="#FF319E63" Offset="0.507"/>
+                                                    </LinearGradientBrush>
+                                                </Border.Background>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="120"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="200"/>
+                                                        <ColumnDefinition Width="200"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock TextWrapping="Wrap" Text="{Binding ConverterParameter=ltSortby, Converter={StaticResource Localization}, Source={StaticResource Localization}}" VerticalAlignment="Center" Foreground="{StaticResource WhiteTextBrush}" HorizontalAlignment="Right" Margin="0,0,15,0"/>
+                                                    <ComboBox Width="250"  HorizontalAlignment="Left" VerticalAlignment="Center" Height="28" Margin="5,0,0,0" Style="{StaticResource WhiteCombo}" Grid.Column="1" ItemsSource="{Binding SortCollection}"  SelectedItem="{Binding SelectedSortItem, Mode=TwoWay}" />
+                                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0" Grid.Column="2">
+                                                        <TextBlock TextWrapping="Wrap" Text="{Binding ConverterParameter=ltNoofpremises, Converter={StaticResource Localization}, Source={StaticResource Localization}}"  Foreground="{StaticResource WhiteTextBrush}" />
+                                                        <TextBlock TextWrapping="Wrap" Text="{Binding PremisesCount, Mode=OneWay}"  Foreground="{StaticResource WhiteTextBrush}" />
+                                                    </StackPanel>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,15,0" Grid.Column="3" VerticalAlignment="Center">
+                                                        <TextBlock TextWrapping="Wrap" Text="{Binding ConverterParameter=ltnoofcustomers, Converter={StaticResource Localization}, Source={StaticResource Localization}}"  Foreground="{StaticResource WhiteTextBrush}" />
+                                                        <TextBlock TextWrapping="Wrap" Text="{Binding Customers.Count, Mode=OneWay}"  Foreground="{StaticResource WhiteTextBrush}" />
+                                                    </StackPanel>
+
+                                                </Grid>
+                                            </Border>
+                                            <ListBox x:Name="listBox" ItemsSource="{Binding Customers}" SelectedItem="{Binding SelectedCustomer, Mode=TwoWay}"
+        										ItemTemplate="{StaticResource SearchDataTemplate}"  ScrollViewer.VerticalScrollBarVisibility="Visible" 
+        										Style="{StaticResource SearchListBox}" ItemContainerStyle="{StaticResource ListBoxItemStyle1}" Height="120" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsPanel="{StaticResource ItemsPanelTemplate1}"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </sdk:TabItem>
+                      
+                    </sdk:TabControl>
+
+                </Grid>
+            </ScrollViewer>
+        </controlsToolkit:BusyIndicator>
+    </Grid>
+</UserControl>

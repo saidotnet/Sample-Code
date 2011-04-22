@@ -1,0 +1,10 @@
+D:\bin\debug\AgilityCIS.Orion.DataManager.dll
+D:\bin\debug\AgilityCIS.Orion.DataManager.pdb
+D:\Agility\AgilityCIS.Orion.DataManager\obj\Debug\ResolveAssemblyReference.cache
+D:\Agility\AgilityCIS.Orion.DataManager\obj\Debug\AgilityCIS.Orion.DataManager.dll
+D:\Agility\AgilityCIS.Orion.DataManager\obj\Debug\AgilityCIS.Orion.DataManager.pdb
+E:\bin\debug\AgilityCIS.Orion.DataManager.dll
+E:\bin\debug\AgilityCIS.Orion.DataManager.pdb
+E:\Agility_New\AgilityCIS.Orion.DataManager\obj\Debug\ResolveAssemblyReference.cache
+E:\Agility_New\AgilityCIS.Orion.DataManager\obj\Debug\AgilityCIS.Orion.DataManager.dll
+E:\Agility_New\AgilityCIS.Orion.DataManager\obj\Debug\AgilityCIS.Orion.DataManager.pdb

@@ -1,0 +1,262 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+      xmlns:inter ="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+      xmlns:behaviors="clr-namespace:AgilityCIS.Orion.CustomBehaviors;assembly=AgilityCIS.Orion.CustomBehaviors"
+    xmlns:System="clr-namespace:System;assembly=mscorlib" 
+     xmlns:local="clr-namespace:AgilityCIS.Orion.LocalizationManager;assembly=AgilityCIS.Orion.LocalizationManager"
+    xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit" 
+    xmlns:Agility_Common="clr-namespace:AgilityCIS.Orion.Common;assembly=AgilityCIS.Orion.Common" 
+    xmlns:AgilityCIS_Orion_Common_Controls="clr-namespace:AgilityCIS.Orion.Common.Controls;assembly=AgilityCIS.Orion.Common" 
+    x:Class="AgilityCIS.Orion.Contacts.Views.ContactsView" 
+    mc:Ignorable="d"
+    Width="Auto" Height="Auto" >
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition  Height="350"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+
+
+        <sdk:DataGrid  Height="Auto" Width="Auto" HorizontalAlignment="Left" Style="{StaticResource DataGridStyle}"  Background="#34a266" ColumnHeaderStyle="{StaticResource DataGridHeaderGlassEffect}" ItemsSource="{Binding Contacts}" AutoGenerateColumns="False" >
+         <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn Width="105"  Header="First Name"  Binding="{Binding FName}"></sdk:DataGridTextColumn >
+                <sdk:DataGridTextColumn Width="105" Header="Last Name" Binding="{Binding LName}" ></sdk:DataGridTextColumn >
+                <sdk:DataGridTextColumn  Width="105" Header="Initials" Binding="{Binding Initials}" ></sdk:DataGridTextColumn >
+                <sdk:DataGridTextColumn Width="105" Header="Title" Binding="{Binding Title}"></sdk:DataGridTextColumn >
+                <sdk:DataGridCheckBoxColumn Width="105" Header="A/C Auth" Binding="{Binding IsAccAuth}"></sdk:DataGridCheckBoxColumn>
+                <sdk:DataGridCheckBoxColumn Width="105" Header="Bill Cont" Binding="{Binding IsBillingContact}"></sdk:DataGridCheckBoxColumn>
+            </sdk:DataGrid.Columns>
+        </sdk:DataGrid>
+
+
+
+        <!--Grid-->
+
+        <!--Tabs-->
+        <sdk:TabControl Grid.Row="1" Background="{x:Null}" MinHeight="250" Grid.ColumnSpan="2">
+            <sdk:TabItem x:Name="tabItem2" Header="Details" Style="{StaticResource TabItemStyle1}" Width="120">
+                <Grid Name="grid1" Width="Auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="52" />
+                        <RowDefinition Height="0" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="29" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="65" />
+                        
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="115*" />
+                        <ColumnDefinition Width="182" />
+                        <ColumnDefinition Width="84*" />
+                        <ColumnDefinition Width="332*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock   Text="First Name"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" />
+                    <Agility_Common:WatermarkedTextBox Style="{StaticResource GreyTextBox}" IsUpdateImmediate="True" Watermark="" Grid.Column="1" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" Height="26" VerticalAlignment="Center"  Margin="0,0,10,0">
+                        <inter:Interaction.Triggers>
+                            <inter:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch"/>
+                            </inter:EventTrigger>
+                        </inter:Interaction.Triggers>
+
+                    </Agility_Common:WatermarkedTextBox>
+
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Initials" VerticalAlignment="Center" Grid.Row="1" />
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Last Name" VerticalAlignment="Center" Grid.Row="2" />
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Job Title" VerticalAlignment="Center" Grid.Row="3" />
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Job Status" VerticalAlignment="Center" Grid.Row="4" />
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Work Phone" VerticalAlignment="Center" Grid.Row="5" />
+                    <TextBlock HorizontalAlignment="Left" Margin="10,18,0,48" Text="Work Fax" VerticalAlignment="Center" Grid.Row="7" />
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Notes" VerticalAlignment="Center" Grid.Row="8" />
+                    <Agility_Common:WatermarkedTextBox Height="26" IsUpdateImmediate="True" Margin="0,0,10,0" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Column="1" Grid.Row="1">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                    <Agility_Common:WatermarkedTextBox Height="26" IsUpdateImmediate="True" Margin="0,0,10,0" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Column="1" Grid.Row="2">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                    <Agility_Common:WatermarkedTextBox Height="26" IsUpdateImmediate="True" Margin="0,0,10,0" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Column="1" Grid.Row="4">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                    <Agility_Common:WatermarkedTextBox Height="26" IsUpdateImmediate="True" Margin="0,0,10,0" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Row="3" Grid.Column="1">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                    <Agility_Common:WatermarkedTextBox Height="26" IsUpdateImmediate="True" Margin="0,0,10,0" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Column="1" Grid.Row="5">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                    <Agility_Common:WatermarkedTextBox Height="26" IsUpdateImmediate="True" Margin="0,14,10,42" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Column="1" Grid.Row="7">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                    <Agility_Common:WatermarkedTextBox Height="51" IsUpdateImmediate="True" Margin="0,6,0,8" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="3">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                    <TextBlock Grid.Column="2" Height="21" HorizontalAlignment="Left" Margin="11,20,0,0" Name="textBlock1" Text="Residential" VerticalAlignment="Top" Width="70" />
+                    <TextBlock Grid.Column="2" Grid.Row="2" Height="26" HorizontalAlignment="Left" Margin="14,4,0,0" Name="textBlock2" Text="Address:" VerticalAlignment="Top" Width="70" />
+                    <TextBlock Grid.Column="2" Grid.Row="4" Height="23" HorizontalAlignment="Left" Margin="14,9,0,0" Name="textBlock3" Text="PostCode:" VerticalAlignment="Top" Width="70" />
+                    <TextBlock Grid.Column="2" Grid.Row="5" Height="20" HorizontalAlignment="Left" Margin="14,9,0,0" Name="textBlock4" Text="Mobile:" VerticalAlignment="Top" Width="70" />
+                    <TextBlock Grid.Column="2" Grid.Row="6" Height="20" HorizontalAlignment="Left" Name="textBlock5" Text="Home Ph:" VerticalAlignment="Top" Width="61" Margin="6,7,0,0" />
+                    <TextBlock Grid.Column="2" Grid.Row="7" Height="23" HorizontalAlignment="Left" Margin="14,53,0,0" Name="textBlock6" Text="Email:" VerticalAlignment="Top" Width="70" />
+                    <TextBlock Grid.Column="3" Grid.Row="5" Height="20" HorizontalAlignment="Left" Margin="114,12,0,0" Name="textBlock7" Text="Date of Birth:" VerticalAlignment="Top" />
+                    <ComboBox Grid.Column="3" Grid.Row="5" Height="25" HorizontalAlignment="Left" Margin="220,5,0,0" Name="comboBox1" VerticalAlignment="Top" Width="89" />
+                    <TextBlock Grid.Column="3" Grid.Row="6" Height="20" HorizontalAlignment="Right" Margin="0,7,105,0" Name="textBlock8" Text="ResidentialStatus:" VerticalAlignment="Top" Width="101" />
+                    <ComboBox Grid.Column="3" Grid.Row="5" Height="28" HorizontalAlignment="Left" Margin="221,34,0,0" Name="comboBox2" VerticalAlignment="Top" Width="88" Grid.RowSpan="2" />
+                    <Agility_Common:WatermarkedTextBox Height="21" IsUpdateImmediate="True" Margin="7,0,16,5" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Column="3">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                    <Agility_Common:WatermarkedTextBox Height="22" IsUpdateImmediate="True" Margin="7,4,16,9" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Column="3" Grid.Row="2">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                    <Agility_Common:WatermarkedTextBox Height="26" IsUpdateImmediate="True" Margin="7,5,16,4" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Column="3" Grid.Row="3">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                    <Agility_Common:WatermarkedTextBox Height="26" IsUpdateImmediate="True" Margin="7,4,194,5" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Column="3" Grid.Row="4">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                    <Agility_Common:WatermarkedTextBox Height="27" IsUpdateImmediate="True" Margin="7,4,211,4" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Column="3" Grid.Row="5">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                    <Agility_Common:WatermarkedTextBox Height="28" IsUpdateImmediate="True" Margin="7,5,211,49" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Column="3" Grid.Row="7">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                    <Agility_Common:WatermarkedTextBox Height="20" IsUpdateImmediate="True" Margin="7,53,16,9" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Column="3" Grid.Row="7">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                    <Agility_Common:WatermarkedTextBox Height="27" IsUpdateImmediate="True" Margin="7,0,211,2" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Column="3" Grid.Row="6">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                    <TextBlock Height="20" HorizontalAlignment="Left" Margin="11,13,0,0" Name="textBlock9" Text="Email:" VerticalAlignment="Top" Width="40" Grid.Column="2" Grid.Row="7" />
+                    <Agility_Common:WatermarkedTextBox Height="26" IsUpdateImmediate="True" Margin="7,6,6,2" Style="{StaticResource GreyTextBox}" Text="{Binding CustomerSearchCriteria.CustomerNo, Mode=TwoWay}" VerticalAlignment="Center" Watermark="" Grid.Column="3" Grid.Row="7">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="KeyDown">
+                                <Agility_Common:DefaultEnterButtonTrigger TargetName="btnSearch" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Agility_Common:WatermarkedTextBox>
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem x:Name="tabItem" Header="Flags" Style="{StaticResource TabItemStyle1}" Width="50">
+                <Grid Name="GridFlag" Width="Auto" Height="Auto" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0" />
+                        <RowDefinition Height="0" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*" />
+                        <ColumnDefinition Width="10*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Billing Contact" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" />
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Cheif Executive" VerticalAlignment="Center" Grid.Row="3" />
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Decision Maker" VerticalAlignment="Center" Grid.Row="4" />
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Emergency 1" VerticalAlignment="Center" Grid.Row="5" />
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Emergency 2" VerticalAlignment="Center" Grid.Row="6" />
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Guarantor" VerticalAlignment="Center" Grid.Row="7" />
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Information Technology Officer" VerticalAlignment="Center" Grid.Row="8" />
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" Text="Operations" VerticalAlignment="Center" Grid.Row="9" />
+                    <CheckBox HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Center" Grid.Row="2" Grid.Column="1"/>
+                    <CheckBox HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Center" Grid.Row="3" Grid.Column="1"/>
+                    <CheckBox HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Center" Grid.Row="4" Grid.Column="1"/>
+                    <CheckBox HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Center" Grid.Row="5" Grid.Column="1"/>
+                    <CheckBox HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Center" Grid.Row="6" Grid.Column="1"/>
+                    <CheckBox HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Center" Grid.Row="7" Grid.Column="1"/>
+                    <CheckBox HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Center" Grid.Row="8" Grid.Column="1"/>
+                    <CheckBox HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Center" Grid.Row="9" Grid.Column="1"/>
+
+
+                </Grid>
+            </sdk:TabItem>
+            <sdk:TabItem x:Name="tabItem3" Header="Interests" Style="{StaticResource TabItemStyle1}" Width="80"></sdk:TabItem>
+            <sdk:TabItem x:Name="tabItem4" Header="Anniversaries" Style="{StaticResource TabItemStyle1}" Width="110"></sdk:TabItem>
+
+        </sdk:TabControl>
+        <Grid HorizontalAlignment="Right" Grid.Column="1" Margin="0,0,0,340"  Grid.RowSpan="2" Width="30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="12*" />
+                <ColumnDefinition Width="16*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <Image Source="/AgilityCIS.Orion.Common;component/Images/top-icon7.png" Cursor="Hand" Margin="2,44,0,140" Grid.Column="1" Height="26" Width="28" />
+        <Image Source="/AgilityCIS.Orion.Common;component/Images/top-icon10.png" Cursor="Hand" Margin="2,6,0,176" Grid.Column="1" Width="28" />
+    </Grid>
+</UserControl>
+ 

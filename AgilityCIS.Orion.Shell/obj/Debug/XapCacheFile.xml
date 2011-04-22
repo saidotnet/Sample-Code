@@ -1,0 +1,37 @@
+﻿<xapCache source="E:\Agility_New\AgilityCIS.Orion.Shell\Bin\Debug\AgilityCIS.Orion.Shell.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="4/22/2011 3:53:01 PM">
+  <file source="E:\Agility_New\AgilityCIS.Orion.Shell\obj\Debug\AgilityCIS.Orion.Shell.dll" archivePath="AgilityCIS.Orion.Shell.dll" lastWriteTime="4/22/2011 3:53:00 PM" />
+  <file source="E:\Agility_New\AgilityCIS.Orion.Common\Bin\Debug\AgilityCIS.Orion.Common.dll" archivePath="AgilityCIS.Orion.Common.dll" lastWriteTime="4/22/2011 3:19:02 PM" />
+  <file source="E:\Agility_New\AgilityCIS.Orion.CustomBehaviors\Bin\Debug\AgilityCIS.Orion.CustomBehaviors.dll" archivePath="AgilityCIS.Orion.CustomBehaviors.dll" lastWriteTime="4/20/2011 10:15:58 AM" />
+  <file source="E:\Agility_New\AgilityCIS.Orion.LocalizationManager\Bin\Debug\AgilityCIS.Orion.LocalizationManager.dll" archivePath="AgilityCIS.Orion.LocalizationManager.dll" lastWriteTime="4/20/2011 10:29:05 AM" />
+  <file source="E:\Agility_New\AgilityCIS.Orion.Services\Bin\Debug\AgilityCIS.Orion.Services.dll" archivePath="AgilityCIS.Orion.Services.dll" lastWriteTime="4/22/2011 3:19:01 PM" />
+  <file source="E:\Agility_New\AgilityCIS.Orion.Styles\Bin\Debug\AgilityCIS.Orion.Styles.dll" archivePath="AgilityCIS.Orion.Styles.dll" lastWriteTime="4/22/2011 3:19:03 PM" />
+  <file source="E:\Agility_New\Lib\Microsoft.Expression.Interactions.dll" archivePath="Microsoft.Expression.Interactions.dll" lastWriteTime="4/20/2011 10:13:12 AM" />
+  <file source="E:\Agility_New\Lib\Microsoft.Practices.Prism.dll" archivePath="Microsoft.Practices.Prism.dll" lastWriteTime="4/20/2011 10:13:12 AM" />
+  <file source="E:\Agility_New\Lib\Microsoft.Practices.Prism.Interactivity.dll" archivePath="Microsoft.Practices.Prism.Interactivity.dll" lastWriteTime="4/20/2011 10:13:12 AM" />
+  <file source="E:\Agility_New\Lib\Microsoft.Practices.Prism.MefExtensions.dll" archivePath="Microsoft.Practices.Prism.MefExtensions.dll" lastWriteTime="4/20/2011 10:13:12 AM" />
+  <file source="E:\Agility_New\Lib\Prism\Microsoft.Practices.ServiceLocation.dll" archivePath="Microsoft.Practices.ServiceLocation.dll" lastWriteTime="4/20/2011 10:13:11 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.ComponentModel.Composition.dll" archivePath="System.ComponentModel.Composition.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.ComponentModel.Composition.Initialization.dll" archivePath="System.ComponentModel.Composition.Initialization.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.ComponentModel.DataAnnotations.dll" archivePath="System.ComponentModel.DataAnnotations.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Controls.Data.dll" archivePath="System.Windows.Controls.Data.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Controls.dll" archivePath="System.Windows.Controls.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Controls.Navigation.dll" archivePath="System.Windows.Controls.Navigation.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="E:\Agility_New\Lib\System.Windows.Controls.Toolkit.dll" archivePath="System.Windows.Controls.Toolkit.dll" lastWriteTime="4/20/2011 10:13:12 AM" />
+  <file source="E:\Agility_New\Lib\System.Windows.Controls.Toolkit.Internals.dll" archivePath="System.Windows.Controls.Toolkit.Internals.dll" lastWriteTime="4/20/2011 10:13:12 AM" />
+  <file source="E:\Agility_New\Lib\System.Windows.Interactivity.dll" archivePath="System.Windows.Interactivity.dll" lastWriteTime="4/20/2011 10:13:12 AM" />
+  <file source="E:\Agility_New\AgilityCIS.Orion.CustomBehaviors\Bin\Debug\System.Windows.Controls.Input.Toolkit.dll" archivePath="System.Windows.Controls.Input.Toolkit.dll" lastWriteTime="4/20/2011 10:13:12 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Controls.Data.Input.dll" archivePath="System.Windows.Controls.Data.Input.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\System.Windows.Data.dll" archivePath="System.Windows.Data.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="E:\Agility_New\AgilityCIS.Orion.LocalizationManager\Bin\Debug\de\AgilityCIS.Orion.LocalizationManager.resources.dll" archivePath="de\AgilityCIS.Orion.LocalizationManager.resources.dll" lastWriteTime="4/20/2011 10:29:05 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\de\System.ComponentModel.Composition.resources.dll" archivePath="de\System.ComponentModel.Composition.resources.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\de\System.ComponentModel.Composition.Initialization.resources.dll" archivePath="de\System.ComponentModel.Composition.Initialization.resources.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\de\System.ComponentModel.DataAnnotations.resources.dll" archivePath="de\System.ComponentModel.DataAnnotations.resources.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\de\System.Windows.Controls.resources.dll" archivePath="de\System.Windows.Controls.resources.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\de\System.Windows.Controls.Data.resources.dll" archivePath="de\System.Windows.Controls.Data.resources.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\de\System.Windows.Controls.Navigation.resources.dll" archivePath="de\System.Windows.Controls.Navigation.resources.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\de\System.Windows.Controls.Data.Input.resources.dll" archivePath="de\System.Windows.Controls.Data.Input.resources.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="C:\Program Files\Microsoft SDKs\Silverlight\v4.0\Libraries\Client\de\System.Windows.Data.resources.dll" archivePath="de\System.Windows.Data.resources.dll" lastWriteTime="8/26/2010 2:17:48 AM" />
+  <file source="E:\Agility_New\AgilityCIS.Orion.Shell\ServiceReferences.ClientConfig" archivePath="ServiceReferences.ClientConfig" lastWriteTime="4/20/2011 1:36:30 PM" />
+  <file source="E:\Agility_New\AgilityCIS.Orion.Shell\Modules.xml" archivePath="Modules.xml" lastWriteTime="4/20/2011 10:12:55 AM" />
+  <file source="E:\Agility_New\AgilityCIS.Orion.Shell\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="4/20/2011 10:16:32 AM" />
+</xapCache>

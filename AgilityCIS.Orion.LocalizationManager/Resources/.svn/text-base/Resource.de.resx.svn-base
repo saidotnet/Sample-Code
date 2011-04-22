@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ltAccountName" xml:space="preserve">
+    <value>Account name</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltAccountNumber" xml:space="preserve">
+    <value>Account number</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltAlert" xml:space="preserve">
+    <value>Alert</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltAlertExpires" xml:space="preserve">
+    <value>Alert expires</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltBank" xml:space="preserve">
+    <value>Bank</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltBankDetails" xml:space="preserve">
+    <value>Bank details</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltBillCycle" xml:space="preserve">
+    <value>Bill cycle</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltBilling" xml:space="preserve">
+    <value>Billing</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltBillingLimit" xml:space="preserve">
+    <value>Billing limit</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltBillingNotes" xml:space="preserve">
+    <value>Billing notes</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltBondAmountHeld" xml:space="preserve">
+    <value>Bond amount held</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltBranch" xml:space="preserve">
+    <value>Branch</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCalls" xml:space="preserve">
+    <value>Fordert</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCampaigns" xml:space="preserve">
+    <value>Kampagnen</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCardType" xml:space="preserve">
+    <value>Card type</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCCAlert" xml:space="preserve">
+    <value>CC Alert</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCCVerfNo" xml:space="preserve">
+    <value>CC Verf. No.</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCharges" xml:space="preserve">
+    <value>Charges</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltClear" xml:space="preserve">
+    <value>Clear</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltClientName" xml:space="preserve">
+    <value>Client Name</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltContact" xml:space="preserve">
+    <value>Kontakt</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltContacts" xml:space="preserve">
+    <value>Kontakte</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCorrespondence" xml:space="preserve">
+    <value>Correspondence</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCreditCardDetails" xml:space="preserve">
+    <value>Credit card details</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCreditCheckScore" xml:space="preserve">
+    <value>Credit check score</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCreditControlStatus" xml:space="preserve">
+    <value>Credit control status</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCreditCtrl" xml:space="preserve">
+    <value>Credit Ctrl</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCreditLimit" xml:space="preserve">
+    <value>Credit limit</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCurrent" xml:space="preserve">
+    <value>Aktuelle</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCurrentaccountsonly" xml:space="preserve">
+    <value>Girokonten nur</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCustomer" xml:space="preserve">
+    <value>Kunde</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCustomerNo" xml:space="preserve">
+    <value>Kundennummer</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltDecisions" xml:space="preserve">
+    <value>Entscheidungen</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltDetails" xml:space="preserve">
+    <value>Details</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltDocuments" xml:space="preserve">
+    <value>Dokumente</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltFax" xml:space="preserve">
+    <value>Fax</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltFilterCriteria" xml:space="preserve">
+    <value>Filterkriterien</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltFinance" xml:space="preserve">
+    <value>Finance</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltHistory" xml:space="preserve">
+    <value>History</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltHome" xml:space="preserve">
+    <value>Startseite</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltInclLease" xml:space="preserve">
+    <value>Inkl Lease</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltInvoiceCycle" xml:space="preserve">
+    <value>Invoice cycle</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltInvoiceDelivery" xml:space="preserve">
+    <value>Invoic delivery</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltInvoiceOptions" xml:space="preserve">
+    <value>Invoice options</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltMaintanance" xml:space="preserve">
+    <value>Wartung</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltMeterNo" xml:space="preserve">
+    <value>Zählernummer</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltNo" xml:space="preserve">
+    <value>Anzahl</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltnoofcustomers" xml:space="preserve">
+    <value>Keine der Kunden</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltNoofpremises" xml:space="preserve">
+    <value>Keine der Räumlichkeiten</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltNumber" xml:space="preserve">
+    <value>Number</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltOverdue" xml:space="preserve">
+    <value>Überfällig</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltPassword" xml:space="preserve">
+    <value>Password</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltPaymentMethod" xml:space="preserve">
+    <value>Payment method</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltPaymentRef" xml:space="preserve">
+    <value>Payment Ref</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltPhone" xml:space="preserve">
+    <value>Telefon</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltPhoneNo" xml:space="preserve">
+    <value>Telefonnummer</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltPostalAddress" xml:space="preserve">
+    <value>Postanschrift</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltPremiseAddress" xml:space="preserve">
+    <value>Premise Adresse</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltPremisesIP" xml:space="preserve">
+    <value>Lokale / IP</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltPromptPayDisc" xml:space="preserve">
+    <value>Prompt pay disc</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltProperty" xml:space="preserve">
+    <value>Immobilien</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltRecent" xml:space="preserve">
+    <value>Aktuelle</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltRefundBond" xml:space="preserve">
+    <value>Refund bond</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltRelationships" xml:space="preserve">
+    <value>Relationships</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltReports" xml:space="preserve">
+    <value>Berichte</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltSalesCode" xml:space="preserve">
+    <value>Sales Code</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltSearch" xml:space="preserve">
+    <value>Suche</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltSearchResults" xml:space="preserve">
+    <value>Search Results</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltSecurity" xml:space="preserve">
+    <value>Sicherheit</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltSegments" xml:space="preserve">
+    <value>Segmente</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltServices" xml:space="preserve">
+    <value>Dienstleistungen</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltSortby" xml:space="preserve">
+    <value>Sortiert nach</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltStreetName" xml:space="preserve">
+    <value>Hausnummer</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltTaxIndicator" xml:space="preserve">
+    <value>Tax indicator</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltTotalBalance" xml:space="preserve">
+    <value>Total Balance</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltType" xml:space="preserve">
+    <value>Typ</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltAccountDetails" xml:space="preserve">
+    <value>Account Details</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltAGCRewards" xml:space="preserve">
+    <value>AGC Rewards</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltAvgSpend" xml:space="preserve">
+    <value>Avg. Spend</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCorrespondenceByEmail" xml:space="preserve">
+    <value>Correspondence by E-mail</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCorrespondenceByPost" xml:space="preserve">
+    <value>Correspondence by Post</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCustomerName" xml:space="preserve">
+    <value>Name des Kunden</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCustomerType" xml:space="preserve">
+    <value>Customer type</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltDateDetailsConfirmed" xml:space="preserve">
+    <value>Date Details Confirmed</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltDeveloper" xml:space="preserve">
+    <value>Developer</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltEmail" xml:space="preserve">
+    <value>E-mail</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltEmployer" xml:space="preserve">
+    <value>Employer</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltLastName" xml:space="preserve">
+    <value>Last Name</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltNotes" xml:space="preserve">
+    <value>Notes</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltOverride" xml:space="preserve">
+    <value>Override</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltPostalCode" xml:space="preserve">
+    <value>Postal code</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltResidenceName" xml:space="preserve">
+    <value>Resid. Name</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltResidentialCustomers" xml:space="preserve">
+    <value>Residential Customers</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltStreetAddress" xml:space="preserve">
+    <value>Street address</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltSupergoldCardNumber" xml:space="preserve">
+    <value>Supergold card number</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltSupplyCompany" xml:space="preserve">
+    <value>Supply company</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltTreatmentType" xml:space="preserve">
+    <value>Treatment type</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltAdd" xml:space="preserve">
+    <value>Add current customer to campaign</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCall" xml:space="preserve">
+    <value>Add call to customer list</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCollapse" xml:space="preserve">
+    <value>Collapse</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltDelete" xml:space="preserve">
+    <value>Delete customer</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltExpand" xml:space="preserve">
+    <value>Expand</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltFirst" xml:space="preserve">
+    <value>Move to first customer list</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltLast" xml:space="preserve">
+    <value>Move to last customer list</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltMail" xml:space="preserve">
+    <value>Run mail merge for customers in the list</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="LtNext" xml:space="preserve">
+    <value>Move to next customer list</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltPrevious" xml:space="preserve">
+    <value>Move to previous customer list</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltRemove" xml:space="preserve">
+    <value>Remove customer from campaign</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltSave" xml:space="preserve">
+    <value>Save changes</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltSearchNo" xml:space="preserve">
+    <value>Search for the customer no</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltView" xml:space="preserve">
+    <value>Anzeigen</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltActivity" xml:space="preserve">
+    <value>Gr Activity</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCallNote" xml:space="preserve">
+    <value>Gr Call Note</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltCorrespondance" xml:space="preserve">
+    <value>Gr Correspondance</value>
+    <comment>Can Translate</comment>
+  </data>
+  <data name="ltSystemEvent" xml:space="preserve">
+    <value>Gr System Event</value>
+    <comment>Can Translate</comment>
+  </data>
+</root>

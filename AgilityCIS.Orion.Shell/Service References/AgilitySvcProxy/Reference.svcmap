@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7a501234-eab8-443c-96ec-60b6968bfd3e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AgilityCIS.Orion.xsd" MetadataType="Schema" ID="08d85cd4-96d3-4502-9793-5af2066c597e" SourceId="1" SourceUrl="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc?xsd=xsd1" />
+    <MetadataFile FileName="AgilityService.wsdl" MetadataType="Wsdl" ID="ae85ebdf-80bc-4e28-9a68-977aaa90a7d7" SourceId="1" SourceUrl="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc?wsdl" />
+    <MetadataFile FileName="AgilityCIS.Orion.wsdl" MetadataType="Wsdl" ID="33b5f50d-bb23-4da2-b256-33db032aafcf" SourceId="1" SourceUrl="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Agility1.xsd" MetadataType="Schema" ID="da46f911-b7dd-4499-bd08-6f81c92d47ea" SourceId="1" SourceUrl="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc?xsd=xsd0" />
+    <MetadataFile FileName="Agility21.xsd" MetadataType="Schema" ID="d4042a45-d3eb-40e5-abce-c3217305b487" SourceId="1" SourceUrl="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc?xsd=xsd2" />
+    <MetadataFile FileName="Agility2.xsd" MetadataType="Schema" ID="2c4ebf4f-308a-4a39-bfc6-a736ca07cff0" SourceId="1" SourceUrl="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc?xsd=xsd3" />
+    <MetadataFile FileName="AgilityCIS.Orion.disco" MetadataType="Disco" ID="f20eea45-a3a7-4699-8f32-aace6db13849" SourceId="1" SourceUrl="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

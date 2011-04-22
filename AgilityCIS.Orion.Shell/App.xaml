@@ -1,0 +1,27 @@
+﻿<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="AgilityCIS.Orion.Shell.App"
+              xmlns:local="clr-namespace:AgilityCIS.Orion.LocalizationManager;assembly=AgilityCIS.Orion.LocalizationManager"
+             xmlns:common="clr-namespace:AgilityCIS.Orion.Common;assembly=AgilityCIS.Orion.Common"
+             >
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/AgilityCIS.Orion.Styles;component/ButtonStyles.xaml" />
+                <ResourceDictionary Source="/AgilityCIS.Orion.Styles;component/TextBlockStyle.xaml" />
+                <ResourceDictionary Source="/AgilityCIS.Orion.Styles;component/ComboStlyle.xaml" />
+                <ResourceDictionary Source="/AgilityCIS.Orion.Styles;component/ScrollViewerStyle.xaml" />
+                <ResourceDictionary Source="/AgilityCIS.Orion.Styles;component/TextBoxStyle.xaml" />
+                <ResourceDictionary Source="/AgilityCIS.Orion.Styles;component/TabControlStyle.xaml" />
+                <ResourceDictionary Source="/AgilityCIS.Orion.Styles;component/Popustyle.xaml"/>
+                <ResourceDictionary Source="/AgilityCIS.Orion.Styles;component/DataGridStyle.xaml"/>
+
+
+
+            </ResourceDictionary.MergedDictionaries>
+            <local:ApplicationResources x:Key="Localization" ></local:ApplicationResources>
+            <common:DateTimeConverter x:Key="DateTimeFormatter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,10 @@
+D:\Agility\AgilityCIS.Orion.Services\Bin\Debug\AgilityCIS.Orion.Services.dll
+D:\Agility\AgilityCIS.Orion.Services\Bin\Debug\AgilityCIS.Orion.Services.pdb
+D:\Agility\AgilityCIS.Orion.Services\obj\Debug\ResolveAssemblyReference.cache
+D:\Agility\AgilityCIS.Orion.Services\obj\Debug\AgilityCIS.Orion.Services.dll
+D:\Agility\AgilityCIS.Orion.Services\obj\Debug\AgilityCIS.Orion.Services.pdb
+E:\Agility_New\AgilityCIS.Orion.Services\Bin\Debug\AgilityCIS.Orion.Services.dll
+E:\Agility_New\AgilityCIS.Orion.Services\Bin\Debug\AgilityCIS.Orion.Services.pdb
+E:\Agility_New\AgilityCIS.Orion.Services\obj\Debug\ResolveAssemblyReference.cache
+E:\Agility_New\AgilityCIS.Orion.Services\obj\Debug\AgilityCIS.Orion.Services.dll
+E:\Agility_New\AgilityCIS.Orion.Services\obj\Debug\AgilityCIS.Orion.Services.pdb

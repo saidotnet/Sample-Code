@@ -1,0 +1,529 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+     xmlns:inter ="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:System="clr-namespace:System;assembly=mscorlib" 
+	xmlns:local="clr-namespace:AgilityCIS.Orion.LocalizationManager;assembly=AgilityCIS.Orion.LocalizationManager"
+     xmlns:behaviors="clr-namespace:AgilityCIS.Orion.CustomBehaviors;assembly=AgilityCIS.Orion.CustomBehaviors"
+    xmlns:controlsToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit" xmlns:Agility_Common="clr-namespace:AgilityCIS.Orion.Common;assembly=AgilityCIS.Orion.Common" 
+   
+    xmlns:AgilityCIS_Orion_Common_Controls="clr-namespace:AgilityCIS.Orion.Common.Controls;assembly=AgilityCIS.Orion.Common" 
+   
+    mc:Ignorable="d"
+ 
+	x:Class="AgilityCIS.Orion.Customers.Views.FinanceView" Height="Auto" Width="Auto" >
+    <UserControl.Resources>
+        <DataTemplate x:Key="DataTemplate1">
+
+            <Grid>
+
+                <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Center" Text="{Binding CustomerName, Mode=Twoway}" Tag="{Binding CustomerNo, Mode=Twoway}"/>
+
+            </Grid>
+
+        </DataTemplate>
+        <local:ApplicationResources x:Key="Localization" />
+        <Storyboard x:Name="SideReverseAnimation"/>
+        <Storyboard x:Name="Storyboard1"/>
+        <Storyboard x:Name="SideStoryBoard"/>
+        <Storyboard x:Name="Storyboard2"/>
+        <Storyboard x:Name="Storyboard3"/>
+        <Storyboard x:Name="Storyboard4"/>
+        <Storyboard x:Name="Storyboard5"/>
+        <Storyboard x:Name="Storyboard6"/>
+
+    </UserControl.Resources>
+	<Grid>
+		<controlsToolkit:BusyIndicator Style="{StaticResource BusyIndicatorStyle2}"
+				IsBusy="{Binding IsBusy, Mode=OneWay}"
+				DisplayAfter="0"
+				BusyContent="Please wait...">
+		<sdk:TabControl x:Name="tabControl" Width="Auto">
+				<sdk:TabItem x:Name="tabItem1" Header="{Binding ConverterParameter=ltDetails, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Style="{StaticResource TabItemStyle1}" Width="120">
+					<ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible" UseLayoutRounding="False" Style="{StaticResource GreenScroll}">
+						<Grid Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MinHeight="200">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="0.144*"/>
+								<ColumnDefinition Width="0.24*"/>
+								<ColumnDefinition Width="0.1*"/>
+								<ColumnDefinition Width="0.144*"/>
+								<ColumnDefinition Width="0.24*"/>
+								<ColumnDefinition Width="0"/>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+                            <RowDefinition Height="35"/>
+								<RowDefinition Height="35" />
+								<RowDefinition Height="35"/>
+								<RowDefinition  Height="35"/>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="35"/>
+								<RowDefinition Height="35"/>
+								<RowDefinition Height="35"/>
+								<RowDefinition Height="35"/>
+								<RowDefinition Height="35"/>
+								<RowDefinition Height="35"/>
+								<RowDefinition Height="35"/>
+								<RowDefinition Height="35"/>
+								<RowDefinition Height="35"/>
+								<RowDefinition Height="150"/>
+							</Grid.RowDefinitions>
+							<TextBlock Text="Priority" Grid.Row="4" Visibility="{Binding IsCompany, Mode=OneWay}"  Margin="15,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource IsMandatory}"/>
+		 					<TextBlock  Style="{StaticResource IsMandatory}" Text="{Binding ConverterParameter=ltCustomerType, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Grid.Row="3"  Margin="15,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+							<TextBlock  Style="{StaticResource IsMandatory}" Text="{Binding ConverterParameter=ltPhone, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Grid.Row="5"  Margin="15,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+							<TextBlock Text="{Binding ConverterParameter=ltFax, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Grid.Row="6"  Margin="15,0,0,0" HorizontalAlignment="Left" d:LayoutOverrides="Height" VerticalAlignment="Center" />
+							<TextBlock Text="{Binding ConverterParameter=ltPostalAddress, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Grid.Row="7"  Margin="15,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource IsMandatory}" />
+							<TextBlock Text="{Binding ConverterParameter=ltPostalCode, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Grid.Row="10"  Margin="15,0,0,0" HorizontalAlignment="Left" Width="75.06" VerticalAlignment="Center" />
+
+							<TextBlock Text="{Binding ConverterParameter=ltNotes, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Grid.Row="14"  Margin="15,0,0,0" HorizontalAlignment="Left" Width="55.454" d:LayoutOverrides="Height"/>
+							<StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
+								<CheckBox   Foreground="#FF5AD049" IsChecked="{Binding SelectedCustomer.IsDeveloper, Mode=TwoWay}" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" Content="{Binding ConverterParameter=ltDeveloper, Converter={StaticResource Localization}, Source={StaticResource Localization}}"/>
+							</StackPanel>
+							<ComboBox DisplayMemberPath="CustomerTypeCode" Height="26" ItemsSource="{Binding CustomerTypes}" 
+								SelectedItem="{Binding SelectedCustomer.CustType, Mode=TwoWay}" 
+								SelectedValue="{Binding SelectedCustomer.CustType.CustomerTypeId, Mode=TwoWay}"  SelectedValuePath="CustomerTypeId" Margin="10,0,0,0" Style="{StaticResource GreyCombo}" Grid.Row="3" Grid.Column="1" />
+							<Grid Grid.Row="5" Grid.Column="1" >
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="0.2*"/>
+									<ColumnDefinition Width=".8*" />
+								</Grid.ColumnDefinitions>
+								<TextBox  MaxLength="3"   Text="{Binding SelectedCustomer.STDCode, Mode=TwoWay}" Style="{StaticResource GreyTextBox}" Height="26" VerticalAlignment="Center" Margin="10,0,0,0">
+									<inter:Interaction.Behaviors>
+										<behaviors:RightClickTrigger/>
+									</inter:Interaction.Behaviors>
+								</TextBox>
+								<TextBox  MaxLength="20" Grid.Column="1" Text="{Binding SelectedCustomer.Phone, Mode=TwoWay}" Style="{StaticResource GreyTextBox}" Height="26" VerticalAlignment="Center" Margin="15,0,0,0" >
+									<inter:Interaction.Behaviors>
+										<behaviors:RightClickTrigger/>
+									</inter:Interaction.Behaviors>
+								</TextBox>
+							</Grid>
+
+							<TextBox  MaxLength="20" Text="{Binding SelectedCustomer.Fax, Mode=TwoWay}" Grid.Row="6" Grid.Column="1" Style="{StaticResource GreyTextBox}" Height="23" VerticalAlignment="Center" Margin="10,0,0,0">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger/>
+								</inter:Interaction.Behaviors>
+							</TextBox>
+
+							<TextBox   MaxLength="100" Text="{Binding SelectedCustomer.PostalAddr1, Mode=TwoWay}" Grid.Row="7" Grid.Column="1" Style="{StaticResource GreyTextBox}" Margin="10,0,0,0" VerticalAlignment="Center">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger/>
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<TextBox   MaxLength="10" Text="{Binding SelectedCustomer.PostalPostCode, Mode=TwoWay}" Grid.Row="10" Grid.Column="1" Style="{StaticResource GreyTextBox}" HorizontalAlignment="Left" Width="100" Margin="10,0,0,0" VerticalAlignment="Center">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger/>
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<TextBox Text="{Binding SelectedCustomer.Notes, Mode=TwoWay}"  Grid.Row="14" Grid.Column="1" Style="{StaticResource GreyTextBox}" Grid.ColumnSpan="4" Margin="0" d:LayoutOverrides="Width">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger/>
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<TextBlock Text="{Binding ConverterParameter=ltAvgSpend, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="3" Grid.Row="0"  Margin="0,1,0,0"/>
+							<Grid Grid.Column="4" Margin="0" d:LayoutOverrides="Width" Grid.ColumnSpan="2" Visibility="{Binding IsResidential}">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition/>
+									<ColumnDefinition/>
+								</Grid.ColumnDefinitions>
+								<TextBox IsReadOnly="True" Text="{Binding SelectedCustomer.AvgMonthlySpend, Mode=TwoWay}" Style="{StaticResource GreyTextBox}" Height="26" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="10,0,0,0"/>
+								<TextBlock Grid.Column="1" TextWrapping="Wrap" Text="{Binding ConverterParameter=ltResidentialCustomers, Converter={StaticResource Localization}, Source={StaticResource Localization}}" VerticalAlignment="Center" Foreground="#FFFD094C" Height="14.5"  HorizontalAlignment="Stretch" Margin="10,0,0,0"/>
+							</Grid>
+							<Grid Grid.Column="4" Margin="0" d:LayoutOverrides="Width" Grid.ColumnSpan="2" Visibility="{Binding IsCompany}">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition/>
+									<ColumnDefinition/>
+								</Grid.ColumnDefinitions>
+								<TextBox IsReadOnly="True" Text="{Binding SelectedCustomer.AvgMonthlySpend, Mode=TwoWay}" Style="{StaticResource GreyTextBox}" Height="26" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="10,0,0,0">
+									<inter:Interaction.Behaviors>
+										<behaviors:RightClickTrigger/>
+									</inter:Interaction.Behaviors>
+								</TextBox>
+								<TextBlock Grid.Column="1" TextWrapping="Wrap" Text="Commercial Customer" VerticalAlignment="Center" Foreground="#FFFD094C" Height="14.5"  HorizontalAlignment="Stretch" Margin="10,0,0,0"/>
+							</Grid>
+							<StackPanel Grid.Row="3" Grid.RowSpan="4" Grid.Column="3" Grid.ColumnSpan="2"  VerticalAlignment="Top">
+								<Grid Visibility="{Binding IsResidential}">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="35"/>
+										<RowDefinition Height="35"/>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width=".6*"/>
+										<ColumnDefinition/>
+									</Grid.ColumnDefinitions>
+									<TextBlock Text="{Binding ConverterParameter=ltEmployer, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"  Margin="0,1,0,0"/>
+									<TextBox  MaxLength="20" Text="{Binding SelectedCustomer.Employer, Mode=TwoWay}"  Style="{StaticResource GreyTextBox}" Height="26" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" Margin="10,0,0,0">
+										<inter:Interaction.Behaviors>
+											<behaviors:RightClickTrigger/>
+										</inter:Interaction.Behaviors>
+									</TextBox>
+									<TextBlock Text="{Binding ConverterParameter=ltEmail, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"  Margin="0,1,0,0"/>
+									<TextBox Text="{Binding SelectedCustomer.EMailAddress, Mode=TwoWay}"  Style="{StaticResource GreyTextBox}" Height="26" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" Margin="10,0,0,0">
+										<inter:Interaction.Behaviors>
+											<behaviors:RightClickTrigger/>
+										</inter:Interaction.Behaviors>
+									</TextBox>
+
+								</Grid>
+								<Grid Visibility="{Binding IsCompany}">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="35"/>
+										<RowDefinition Height="35"/>
+										<RowDefinition Height="35"/>
+										<RowDefinition Height="35"/>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width=".625*"/>
+										<ColumnDefinition/>
+									</Grid.ColumnDefinitions>
+									<TextBlock  Style="{StaticResource IsMandatory}" Text="Industry" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"  Margin="0,1,0,0"/>
+									
+									<ComboBox  DisplayMemberPath="IndustryDesc"  Height="26" ItemsSource="{Binding Industries}" Margin="10,0,0,0" 
+										SelectedItem="{Binding SelectedCustomer.IndustryDetails, Mode=TwoWay}" SelectedValue="{Binding SelectedCustomer.IndustryDetails.IndustryId, Mode=TwoWay}" SelectedValuePath="IndustryId" Style="{StaticResource GreyCombo}" Grid.Column="1" Grid.Row="0" />
+
+									<TextBlock  Text="A/C Manager" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"  Margin="0,1,0,0"/>
+								
+									<ComboBox  DisplayMemberPath="PartyName"  Height="26" ItemsSource="{Binding Parties}" Margin="10,0,0,0" 
+										SelectedItem="{Binding SelectedCustomer.AccMgr, Mode=TwoWay}" SelectedValue="{Binding SelectedCustomer.AccMgr.SeqPartyId, Mode=TwoWay}" SelectedValuePath="SeqPartyId" Style="{StaticResource GreyCombo}" Grid.Column="1" Grid.Row="1" />
+
+									<TextBlock Text="Web Address" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"  Margin="0,1,0,0"/>
+									<TextBox  MaxLength="100" Text="{Binding SelectedCustomer.WebAddress, Mode=TwoWay}"  Style="{StaticResource GreyTextBox}" Height="26" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" Margin="10,0,0,0">
+										<inter:Interaction.Behaviors>
+											<behaviors:RightClickTrigger/>
+										</inter:Interaction.Behaviors>
+									</TextBox>
+									<TextBlock Text="{Binding ConverterParameter=ltEmail, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3"  Margin="0,1,0,0"/>
+									<TextBox  MaxLength="100" Text="{Binding SelectedCustomer.EMailAddress, Mode=TwoWay}"  Style="{StaticResource GreyTextBox}" Height="26" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" Margin="10,0,0,0">
+										<inter:Interaction.Behaviors>
+											<behaviors:RightClickTrigger/>
+										</inter:Interaction.Behaviors>
+									</TextBox>
+
+								</Grid>
+
+							</StackPanel>
+
+							<TextBlock  Style="{StaticResource IsMandatory}" Text="{Binding ConverterParameter=ltStreetAddress, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="3" Grid.Row="7"  Margin="0,1,0,0"/>
+							<TextBox  MaxLength="20" Text="{Binding SelectedCustomer.StreetAddrNo, Mode=TwoWay}" Style="{StaticResource GreyTextBox}" Height="26" VerticalAlignment="Center" Grid.Column="4" Grid.Row="7" HorizontalAlignment="Left" Width="85.348" Margin="10,0,0,0">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger/>
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<TextBox   MaxLength="100" Text="{Binding SelectedCustomer.StreetAddr1, Mode=TwoWay}" Style="{StaticResource GreyTextBox}" Height="26" VerticalAlignment="Center" Grid.Column="4" Grid.Row="7" Margin="105,0,0,0">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger/>
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<TextBox  MaxLength="100"  Text="{Binding SelectedCustomer.StreetAddr2, Mode=TwoWay}" Style="{StaticResource GreyTextBox}" Height="26" VerticalAlignment="Center" Grid.Column="4" Grid.Row="8" Margin="105,0,0,0">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger/>
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<TextBox  MaxLength="100"  Text="{Binding SelectedCustomer.StreetAddr3, Mode=TwoWay}" Style="{StaticResource GreyTextBox}" Height="26" VerticalAlignment="Center" Grid.Column="4" Grid.Row="9" Margin="105,0,0,0">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger/>
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<TextBox   MaxLength="100" Text="{Binding SelectedCustomer.PostalAddr2, Mode=TwoWay}"  Style="{StaticResource GreyTextBox}" Grid.Column="1" Grid.Row="8" Margin="10,0,0,0" VerticalAlignment="Center">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger/>
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<TextBox   MaxLength="100" Text="{Binding SelectedCustomer.PostalAddr3, Mode=TwoWay}"  Style="{StaticResource GreyTextBox}" Grid.Column="1" Grid.Row="9" Margin="10,0,0,0" VerticalAlignment="Center">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger/>
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<TextBlock Style="{StaticResource IsMandatory}" Text="{Binding ConverterParameter=ltSupplyCompany, Converter={StaticResource Localization}, Source={StaticResource Localization}}" VerticalAlignment="Center" Grid.Column="3" Grid.Row="10"  Margin="0,1,0,0" HorizontalAlignment="Left"/>
+							<ComboBox IsEnabled="False" SelectedItem="{Binding SelectedCustomer.CustCompany, Mode=TwoWay}" 
+								SelectedValue="{Binding SelectedCustomer.CustCompany.CompanyId, Mode=TwoWay}"  SelectedValuePath="CompanyId"  Grid.Row="10" ItemsSource="{Binding Companies}" DisplayMemberPath="CompanyCode" Grid.Column="4" Height="26" Style="{StaticResource GreyCombo}" Margin="10,0,0,0"/>
+							<TextBlock Text="{Binding ConverterParameter=ltAGCRewards, Converter={StaticResource Localization}, Source={StaticResource Localization}}" VerticalAlignment="Center" Grid.Column="3" Grid.Row="11"  Margin="0,1,0,0" HorizontalAlignment="Left"/>
+							<TextBlock Text="{Binding ConverterParameter=ltDateDetailsConfirmed, Converter={StaticResource Localization}, Source={StaticResource Localization}}" VerticalAlignment="Center" Grid.Column="3" Grid.Row="12"  Margin="0,1,0,0" HorizontalAlignment="Left" TextWrapping="Wrap"/>
+							<CheckBox IsChecked="{Binding SelectedCustomer.IsCorrespondenceByEMail, Mode=TwoWay}" Content="{Binding ConverterParameter=ltCorrespondenceByEmail, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" Grid.Row="11" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,0,0" />
+							<CheckBox Content="{Binding ConverterParameter=ltCorrespondenceByPost, Converter={StaticResource Localization}, Source={StaticResource Localization}}" IsChecked="{Binding SelectedCustomer.IsCorrespondenceByPost, Mode=TwoWay}" HorizontalAlignment="Left" Grid.Row="12" Grid.Column="1"   VerticalAlignment="Center" Margin="10,0,0,0" />
+
+							<TextBlock Text="{Binding ConverterParameter=ltSupergoldCardNumber, Converter={StaticResource Localization}, Source={StaticResource Localization}}" VerticalAlignment="Center" Grid.Column="3" Grid.Row="13"  Margin="0,1,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" Visibility="{Binding IsResidential}"/>
+							<TextBlock Text="Restaurant Assn. No:" VerticalAlignment="Center" Grid.Column="3" Grid.Row="13"  Margin="0,1,0,0" HorizontalAlignment="Left" TextWrapping="Wrap" Visibility="{Binding IsCompany}"/>
+							<TextBox MaxLength="20" Text="{Binding SelectedCustomer.RestaurantAssnNo, Mode=TwoWay}"  Style="{StaticResource GreyTextBox}" Height="26" VerticalAlignment="Center" Grid.Column="4" Grid.Row="13" Margin="10,0,0,0" Visibility="{Binding IsCompany}">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger/>
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<TextBox  Style="{StaticResource GreyTextBox}" Height="26" VerticalAlignment="Center" Grid.Column="4" Grid.Row="13" Margin="10,0,0,0" Visibility="{Binding IsResidential}">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger/>
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<TextBox IsReadOnly="True" Text="{Binding SelectedCustomer.CustomerNo, Mode=TwoWay}" Style="{StaticResource GreyTextBox}" Margin="10,0,0,0" Grid.Column="1" VerticalAlignment="Center" >
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger/>
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<sdk:DatePicker  Text="{Binding SelectedCustomer.AgcRewards, ConverterParameter=dd-MMM-yy, Converter={StaticResource DateTimeFormatter}, Mode=TwoWay}"    Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="4" Grid.Row="11" Margin="10,0,0,0" HorizontalContentAlignment="Stretch" SelectedDateFormat="Short" />
+							<sdk:DatePicker  SelectedDateFormat="Short" Text="{Binding SelectedCustomer.DateDetailsConfirmed, ConverterParameter=dd-MMM-yy, Converter={StaticResource DateTimeFormatter}, Mode=TwoWay}" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="4" Grid.Row="12" Margin="10,0,0,0" HorizontalContentAlignment="Stretch" />
+							<TextBlock HorizontalAlignment="Left" Margin="15,0,0,0" Style="{StaticResource IsMandatory}" Text="Customer No." VerticalAlignment="Center" />
+							<ComboBox Visibility="{Binding IsCompany, Mode=OneWay}" DisplayMemberPath="PriorityCode"  Height="26" ItemsSource="{Binding Priorities}" Margin="10,0,0,0" 
+								SelectedItem="{Binding SelectedCustomer.SeqPriority, Mode=TwoWay}" SelectedValue="{Binding SelectedCustomer.SeqPriority.PriorityId, Mode=TwoWay}" SelectedValuePath="PriorityId" Style="{StaticResource GreyCombo}" Grid.Row="4" Grid.Column="1" />
+							<!--Residential-->                                            
+							<TextBlock Visibility="{Binding IsResidential, Mode=OneWay}" HorizontalAlignment="Left" Margin="15,0,0,0" Style="{StaticResource IsMandatory}" Text="{Binding ConverterParameter=ltResidenceName, Converter={StaticResource Localization}, Source={StaticResource Localization}}" VerticalAlignment="Center" Grid.Row="1" />
+							<TextBlock Visibility="{Binding IsResidential, Mode=OneWay}" HorizontalAlignment="Left" Margin="0" Style="{StaticResource IsMandatory}" Text="{Binding ConverterParameter=ltLastName, Converter={StaticResource Localization}, Source={StaticResource Localization}}" VerticalAlignment="Center" Grid.Column="3" Grid.Row="1" />
+							<TextBlock Visibility="{Binding IsResidential, Mode=OneWay}" HorizontalAlignment="Left" Margin="15,0,0,0" Style="{StaticResource IsMandatory}" Text="{Binding ConverterParameter=ltName, Converter={StaticResource Localization}, Source={StaticResource Localization}}" VerticalAlignment="Center" Grid.Row="2" />
+							<TextBox  MaxLength="100" Height="26" Text="{Binding SelectedCustomer.CustomerFName, Mode=TwoWay}" Visibility="{Binding IsResidential, Mode=OneWay}"  Margin="10,0,0,0" Style="{StaticResource GreyTextBox}"  VerticalAlignment="Center" Grid.Column="1" Grid.Row="1">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger />
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<TextBox  MaxLength="10" Height="26" Visibility="{Binding IsResidential, Mode=OneWay}" Text="{Binding SelectedCustomer.CustomerInitial, Mode=TwoWay}"  Margin="10,0,10,0" Style="{StaticResource GreyTextBox}"  VerticalAlignment="Center" Grid.Column="2" Grid.Row="1">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger />
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<TextBox MaxLength="100" Grid.Row="1" Text="{Binding SelectedCustomer.CustomerLName, Mode=TwoWay}" Visibility="{Binding IsResidential, Mode=OneWay}"  Height="26" Margin="10,0,0,0" Style="{StaticResource GreyTextBox}"  VerticalAlignment="Center" Grid.Column="4">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger />
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<TextBox MaxLength="100"  Grid.Row="2" Grid.ColumnSpan="3"  Text="{Binding SelectedCustomer.CustomerName, Mode=TwoWay}" Visibility="{Binding IsResidential, Mode=OneWay}"  Height="26" Margin="10,0,10,0" Style="{StaticResource GreyTextBox}"  VerticalAlignment="Center" Grid.Column="1">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger />
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<CheckBox Visibility="{Binding IsResidential, Mode=OneWay}"  Content="Override" VerticalAlignment="Center" Grid.Row="2" Grid.Column="4" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+							<!--Residentila Ends-->
+							<!--Company-->
+							<TextBlock Visibility="{Binding IsCompany, Mode=OneWay}" HorizontalAlignment="Left" Margin="15,0,0,0" Style="{StaticResource IsMandatory}" Text="Company Name" VerticalAlignment="Center" Grid.Row="1" />
+							<TextBlock Visibility="{Binding IsCompany, Mode=OneWay}" HorizontalAlignment="Left" Margin="15,0,0,0" Text="Trading Name" VerticalAlignment="Center" Grid.Row="2" />
+							<TextBox MaxLength="100"  Grid.ColumnSpan="4"  Height="26" Visibility="{Binding IsCompany, Mode=OneWay}"  Margin="10,0,0,0" Style="{StaticResource GreyTextBox}" Text="{Binding SelectedCustomer.CustomerName, Mode=TwoWay}" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger />
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<TextBox MaxLength="100" Grid.ColumnSpan="4" Grid.Row="2" Visibility="{Binding IsCompany, Mode=OneWay}"  Height="26" Margin="10,0,0,0" Style="{StaticResource GreyTextBox}" Text="{Binding SelectedCustomer.TradingName, Mode=TwoWay}" VerticalAlignment="Center" Grid.Column="1">
+								<inter:Interaction.Behaviors>
+									<behaviors:RightClickTrigger />
+								</inter:Interaction.Behaviors>
+							</TextBox>
+							<!--Company Ends-->
+						</Grid>
+					</ScrollViewer>
+
+				</sdk:TabItem>
+				<sdk:TabItem x:Name="tabItem" Header="{Binding ConverterParameter=ltFinance, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Style="{StaticResource TabItemStyle1}" Width="120">
+
+					<ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Visible" UseLayoutRounding="False" Style="{StaticResource GreenScroll}">
+						<Grid Background="White">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="70*"/>
+								<RowDefinition Height="30*"/>
+							</Grid.RowDefinitions>
+							<Grid VerticalAlignment="Top">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="35"/>
+									<RowDefinition Height="35"/>
+									<RowDefinition Height="35"/>
+									<RowDefinition Height="35"/>
+									<RowDefinition Height="35"/>
+									<RowDefinition Height="35"/>
+									<RowDefinition Height="35"/>
+									<RowDefinition Height="35"/>
+									<RowDefinition Height="35"/>
+									<RowDefinition Height="35"/>
+									<RowDefinition Height="35"/>
+									<RowDefinition Height="107.667"/>
+									<RowDefinition Height="45"/>
+									<RowDefinition Height="35"/>
+
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="0.176*" />
+									<ColumnDefinition Width="0.22*"/>
+									<ColumnDefinition Width="0.051*" />
+									<ColumnDefinition Width="0.18*"/>
+									<ColumnDefinition Width="0.23*"/>
+									<ColumnDefinition Width="0.143*"/>
+								</Grid.ColumnDefinitions>
+
+								<TextBlock Text="{Binding ConverterParameter=ltCreditLimit, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0"/>
+								<TextBox Text="{Binding SelectedCustomer.CreditLimit, Mode=TwoWay}" Grid.Column="1" Style="{StaticResource GreyTextBox}" Height="26" VerticalAlignment="Center" Margin="10,0,0,0">
+									<inter:Interaction.Behaviors>
+										<behaviors:RightClickTrigger/>
+									</inter:Interaction.Behaviors>
+								</TextBox>
+								<TextBlock Style="{StaticResource IsMandatory}" Text="{Binding ConverterParameter=ltBillCycle, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1" Margin="20,0,0,0"/>
+
+								<ComboBox Grid.Column="1" ItemsSource="{Binding BillingCycles}" DisplayMemberPath="BillingCycleCode"  SelectedItem="{Binding SelectedCustomer.SeqBillCycle, Mode=TwoWay}" 
+									SelectedValue="{Binding SelectedCustomer.SeqBillCycle.BillingCycleId, Mode=TwoWay}"  SelectedValuePath="BillingCycleId" Height="26" Grid.Row="1" VerticalAlignment="Center" Style="{StaticResource GreyCombo}" Margin="10,0,0,0"/>
+								<TextBlock Text="{Binding ConverterParameter=ltPassword, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Margin="20,0,0,0"/>
+								<TextBox MaxLength="10" Text="{Binding SelectedCustomer.Password, Mode=TwoWay}"  Grid.Column="1" Style="{StaticResource GreyTextBox}" Height="26" Grid.Row="2" VerticalAlignment="Center" Margin="10,0,0,0">
+									<inter:Interaction.Behaviors>
+										<behaviors:RightClickTrigger/>
+									</inter:Interaction.Behaviors>
+								</TextBox>
+								<TextBlock Style="{StaticResource IsMandatory}" Text="Invoice Style" HorizontalAlignment="Left" Grid.Row="3" d:LayoutOverrides="Height" Margin="20,0,0,0" VerticalAlignment="Center"/>
+								<ComboBox ItemsSource="{Binding InvoiceStyles}" DisplayMemberPath="InvoiceStyleCode" SelectedItem="{Binding SelectedCustomer.InvStyle, Mode=TwoWay}" 
+									SelectedValue="{Binding SelectedCustomer.InvStyle.InvoiceStyleId, Mode=TwoWay}" SelectedValuePath="InvoiceStyleId" Grid.Column="1"  Height="26" Grid.Row="3" VerticalAlignment="Center" Style="{StaticResource GreyCombo}" Margin="10,0,0,0" />
+								<TextBlock Style="{StaticResource IsMandatory}" Text="{Binding ConverterParameter=ltInvoiceDelivery, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="4" Margin="20,0,0,0"/>
+								<ComboBox ItemsSource="{Binding InvoiceDeliveries}" DisplayMemberPath="InvoiceDeliveryDesc" SelectedItem="{Binding SelectedCustomer.InvDelivery, Mode=TwoWay}" 
+									SelectedValue="{Binding SelectedCustomer.InvDelivery.InvoiceDeliveryId, Mode=TwoWay}"  SelectedValuePath="InvoiceDeliveryId" Grid.Column="1"  Height="26" Grid.Row="4" VerticalAlignment="Center" Style="{StaticResource GreyCombo}" Margin="10,0,0,0" />
+								<TextBlock Text="{Binding ConverterParameter=ltCreditCheckScore, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="5" Width="75" TextWrapping="Wrap" Margin="20,0,0,0"/>
+								<ComboBox ItemsSource="{Binding CreditCheckScores}" DisplayMemberPath="CreditCheckScoreDesc" SelectedItem="{Binding SelectedCustomer.Score, Mode=TwoWay}" 
+									SelectedValue="{Binding SelectedCustomer.Score.CreditCheckScoreId, Mode=TwoWay}"  SelectedValuePath="CreditCheckScoreId" Grid.Column="1"  Height="26" Grid.Row="5" VerticalAlignment="Center" Style="{StaticResource GreyCombo}" Margin="10,0,0,0" />
+								<TextBlock Style="{StaticResource IsMandatory}" Text="{Binding ConverterParameter=ltTaxIndicator, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="6" Margin="20,0,0,0"/>
+								<ComboBox ItemsSource="{Binding TaxIndicators}" DisplayMemberPath="TaxIndicatorCode" Grid.Column="1"  Height="26" Grid.Row="6" VerticalAlignment="Center" Style="{StaticResource GreyCombo}" Margin="10,0,0,0"
+									SelectedItem="{Binding SelectedCustomer.SeqTaxIndicator, Mode=TwoWay}" 
+									SelectedValue="{Binding SelectedCustomer.SeqTaxIndicator.TaxIndicatorId, Mode=TwoWay}"  SelectedValuePath="TaxIndicatorId"/>
+								<TextBlock Text="Billing Unit" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="7" Margin="20,0,0,0"/>
+								<ComboBox ItemsSource="{Binding BillingUnits}" DisplayMemberPath="BillingUnitCode" Grid.Column="1"  Height="26" Grid.Row="7" VerticalAlignment="Center" Style="{StaticResource GreyCombo}" Margin="10,0,0,0" 
+									SelectedItem="{Binding SelectedCustomer.SeqBillingUnit, Mode=TwoWay}" 
+									SelectedValue="{Binding SelectedCustomer.SeqBillingUnit.BillingUnitId, Mode=TwoWay}"  SelectedValuePath="BillingUnitId"/>
+								<TextBlock Text="{Binding ConverterParameter=ltPromptPayDisc, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="8" Margin="20,0,0,0"/>
+								<TextBox Grid.Column="1" Text="{Binding PromptPayDisc, Mode=OneWay}" IsReadOnly="True" Style="{StaticResource LightGreyTextBox}" Height="26" VerticalAlignment="Center" Grid.Row="8" Margin="10,0,0,0">
+									<inter:Interaction.Behaviors>
+										<behaviors:RightClickTrigger/>
+									</inter:Interaction.Behaviors>
+								</TextBox>
+								<TextBlock Text="{Binding ConverterParameter=ltBondAmountHeld, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="9" Width="90" TextWrapping="Wrap" Margin="20,0,0,0"/>
+								<Grid HorizontalAlignment="Stretch"  Grid.Column="1" Grid.Row="9">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="0.9*"/>
+										<ColumnDefinition/>
+									</Grid.ColumnDefinitions>
+									<TextBox  Text="{Binding SelectedCustomer.BondAmt, Mode=TwoWay}" HorizontalAlignment="Stretch" Style="{StaticResource LightGreyTextBox}" Height="26" VerticalAlignment="Center" Margin="10,0,0,0">
+										<inter:Interaction.Behaviors>
+											<behaviors:RightClickTrigger/>
+										</inter:Interaction.Behaviors>
+									</TextBox>
+									<Button  Grid.Column="1" HorizontalAlignment="Right" Width="82" Height="30" Content="{Binding ConverterParameter=ltRefundBond, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Style="{StaticResource GreenButton}" Margin="10,0,0,0" Cursor="Hand" ToolTipService.ToolTip="{Binding ConverterParameter=ltRefundBond, Converter={StaticResource Localization}, Source={StaticResource Localization}}"/>
+
+								</Grid>
+
+										
+								<TextBlock Style="{StaticResource IsMandatory}" Text="Payment Method" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="3"/>
+								<!---->
+								<ComboBox ItemsSource="{Binding PayMethods}" DisplayMemberPath="PayMethodDesc" SelectedItem="{Binding SelPayMethod, Mode=TwoWay}" 
+									SelectedValue="{Binding SelPayMethod.PayMethodId, Mode=TwoWay}" SelectedValuePath="PayMethodId"  Grid.Column="4" Style="{StaticResource GreyCombo}" Height="26" VerticalAlignment="Center" Margin="10,0,0,0"/>
+
+								<Border HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Height="30" Grid.Row="1" Grid.Column="3" Background="{StaticResource LightGreenBrushBorder}" Grid.ColumnSpan="2" CornerRadius="5">
+									<TextBlock TextWrapping="Wrap" Text="{Binding ConverterParameter=ltBankDetails, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DarkGreen}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
+								</Border>
+								<TextBlock Foreground="{Binding IsBankMandatory, Mode=OneWay}"  Text="{Binding ConverterParameter=ltBank, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="2" Grid.Column="3"/>
+								<TextBox  MaxLength="20" Text="{Binding SelectedCustomer.Bank, Mode=TwoWay}"  Grid.Column="4" Style="{StaticResource LightGreyTextBox}" Grid.Row="2" Margin="10,0,0,0" Height="26">
+									<inter:Interaction.Behaviors>
+										<behaviors:RightClickTrigger/>
+									</inter:Interaction.Behaviors>                                    
+								</TextBox>
+								<TextBlock Foreground="{Binding IsBankMandatory, Mode=OneWay}"  Text="{Binding ConverterParameter=ltAccountNumber, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="3" TextWrapping="Wrap" Grid.Column="3"/>
+								<TextBox  MaxLength="20" Text="{Binding SelectedCustomer.BankAccNo, Mode=TwoWay}"  Grid.Column="4" Style="{StaticResource LightGreyTextBox}" Height="26" Grid.Row="3" VerticalAlignment="Center" Margin="10,0,0,0"/>
+								<TextBlock Foreground="{Binding IsBankMandatory, Mode=OneWay}"  Text="Account Name" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="4" Grid.Column="3"/>
+								<TextBox MaxLength="100" Text="{Binding SelectedCustomer.BankAccName, Mode=TwoWay}"  Grid.Column="4" Style="{StaticResource LightGreyTextBox}" Height="26" VerticalAlignment="Center" Grid.Row="4" Margin="10,0,0,0">
+									<inter:Interaction.Behaviors>
+										<behaviors:RightClickTrigger/>
+									</inter:Interaction.Behaviors>                                    
+								</TextBox>
+								<TextBlock Foreground="{Binding IsBankMandatory, Mode=OneWay}"  Text="Branch" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="5" Width="90" TextWrapping="Wrap" Grid.Column="3"/>
+								<TextBox MaxLength="20"  Grid.Column="4" Style="{StaticResource LightGreyTextBox}" Text="{Binding SelectedCustomer.BankBranch, Mode=TwoWay}" Height="26" Grid.Row="5" VerticalAlignment="Center" Margin="10,0,0,0">
+									<inter:Interaction.Behaviors>
+										<behaviors:RightClickTrigger/>
+									</inter:Interaction.Behaviors>                                    
+								</TextBox>
+
+								<Border HorizontalAlignment="Left" VerticalAlignment="Center" Width="123" Height="30" Grid.Row="6" Grid.Column="3" Background="{StaticResource LightGreenBrushBorder}" Grid.ColumnSpan="2" CornerRadius="5">
+									<TextBlock TextWrapping="Wrap" Text="{Binding ConverterParameter=ltCreditCardDetails, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Foreground="{StaticResource DarkGreen}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
+								</Border>
+								<TextBlock Foreground="{Binding IsCardMandatory, Mode=OneWay}"   Text="{Binding ConverterParameter=ltCardType, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="7" Grid.Column="3"/>
+								<ComboBox ItemsSource="{Binding CardTypes}" DisplayMemberPath="CardTypeCode" SelectedItem="{Binding SelectedCustomer.CreditCardType, Mode=TwoWay}" 
+									SelectedValue="{Binding SelectedCustomer.CreditCardType.CardTypeCode, Mode=TwoWay}"   SelectedValuePath="CardTypeCode" Grid.Column="4" Style="{StaticResource GreyCombo}" Height="26" VerticalAlignment="Center" Grid.Row="7" Margin="10,0,0,0"/>
+								<TextBlock Foreground="{Binding IsCardMandatory, Mode=OneWay}"   Text="Expiry" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="8" TextWrapping="Wrap" Grid.Column="3"/>
+								<TextBox MaxLength="5"  Text="{Binding SelectedCustomer.CreditCardExpiry, Mode=TwoWay}"  Grid.Column="4" Style="{StaticResource LightGreyTextBox}" Grid.Row="8" VerticalAlignment="Center" Height="26" Margin="10,0,0,0">
+									<inter:Interaction.Behaviors>
+										<behaviors:RightClickTrigger/>
+									</inter:Interaction.Behaviors>                                    
+								</TextBox>
+								<TextBlock Foreground="{Binding IsCardMandatory, Mode=OneWay}"   Text="{Binding ConverterParameter=ltName, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="9" Grid.Column="3"/>
+								<TextBox  MaxLength="100"  Text="{Binding SelectedCustomer.CreditCardName, Mode=TwoWay}"  Grid.Column="4" Style="{StaticResource LightGreyTextBox}" Height="26" VerticalAlignment="Center" Grid.Row="9" Margin="10,0,0,0">
+									<inter:Interaction.Behaviors>
+										<behaviors:RightClickTrigger/>
+									</inter:Interaction.Behaviors>                                    
+								</TextBox>
+								<TextBlock Foreground="{Binding IsCardMandatory, Mode=OneWay}"   Text="{Binding ConverterParameter=ltNumber, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="10" Width="90" TextWrapping="Wrap" Grid.Column="3"/>
+								<TextBox  MaxLength="16" Text="{Binding SelectedCustomer.CreditCardNo, Mode=TwoWay}"  Grid.Column="4" Style="{StaticResource LightGreyTextBox}" Height="26" Grid.Row="10" VerticalAlignment="Center" Margin="10,0,0,0">
+									<inter:Interaction.Behaviors>
+										<behaviors:RightClickTrigger/>
+									</inter:Interaction.Behaviors>                                    
+								</TextBox>
+
+								<Button Grid.Column="5" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Height="30" Style="{StaticResource GreenButton}" Content="{Binding ConverterParameter=ltHistory, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Cursor="Hand" Margin="10,0,0,0" ToolTipService.ToolTip="{Binding ConverterParameter=ltHistory, Converter={StaticResource Localization}, Source={StaticResource Localization}}"/>
+								<TextBlock Text="{Binding ConverterParameter=ltAlert, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" Margin="20,0,0,0" Grid.Row="10"/>
+								<TextBlock Text="{Binding ConverterParameter=ltBillingNotes, Converter={StaticResource Localization}, Source={StaticResource Localization}}" VerticalAlignment="Top" TextWrapping="Wrap" Margin="0,45,0,0" Grid.Column="3" d:LayoutOverrides="Width, GridBox" Grid.Row="11" HorizontalAlignment="Left"/>
+								<TextBlock Foreground="{Binding IsCardMandatory, Mode=OneWay}"   Text="{Binding ConverterParameter=ltCCVerfNo, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap"  Margin="0,15,0,0" Grid.Column="3" d:LayoutOverrides="GridBox" Grid.Row="11"/>
+								<Grid   Grid.Column="4" Grid.Row="11"  VerticalAlignment="Top" Margin="0,5,0,0">
+												
+												
+                                                
+									<TextBox  MaxLength="8"  Text="{Binding SelectedCustomer.CreditCardVerifyNo, Mode=TwoWay}" Padding="0" Height="28" Style="{StaticResource LightGreyTextBox}" HorizontalContentAlignment="Stretch" Margin="10,0,0,0" VerticalAlignment="Center" >
+										<inter:Interaction.Behaviors>
+											<behaviors:RightClickTrigger/>
+										</inter:Interaction.Behaviors>                                       
+									</TextBox>
+                                                    
+								</Grid>
+								<TextBox Margin="20,0,0,0" Text="{Binding SelectedCustomer.Alert, Mode=TwoWay}"  Style="{StaticResource LightGreyTextBox}" Height="100" Grid.Row="11"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Grid.ColumnSpan="2">
+									<inter:Interaction.Behaviors>
+										<behaviors:RightClickTrigger/>
+									</inter:Interaction.Behaviors>                                    
+								</TextBox>
+								<TextBox  Text="{Binding SelectedCustomer.BillNotes, Mode=TwoWay}"  Grid.Column="3" Style="{StaticResource LightGreyTextBox}" Grid.Row="11" Grid.ColumnSpan="2" Margin="0,65,0,0" Grid.RowSpan="2">
+									<inter:Interaction.Behaviors>
+										<behaviors:RightClickTrigger/>
+									</inter:Interaction.Behaviors>                                    
+								</TextBox>
+								<TextBlock Style="{StaticResource IsMandatory}" Text="{Binding ConverterParameter=ltCreditControlStatus, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="13" Margin="18.5,0,0,0" Height="19" Width="111.15"/>
+								<ComboBox ItemsSource="{Binding CreditControlStatuses}" DisplayMemberPath="CreditControlStatusDesc" SelectedItem="{Binding SelectedCustomer.CreditCtrlStatus, Mode=TwoWay}" 
+									SelectedValue="{Binding SelectedCustomer.CreditCtrlStatus.CreditControlStatusId, Mode=TwoWay}"    SelectedValuePath="CreditControlStatusId" Style="{StaticResource GreyCombo}" Height="28" HorizontalAlignment="Stretch" VerticalAlignment="Center"  Padding="0" Grid.Column="1" Grid.Row="13" Margin="10,0,0,0" HorizontalContentAlignment="Stretch"/>
+								<TextBlock Style="{StaticResource IsMandatory}" Text="{Binding ConverterParameter=ltTreatmentType, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="3" Grid.Row="13" />
+								<ComboBox ItemsSource="{Binding TreatmentTypes}" DisplayMemberPath="TreatmentTypeCode" SelectedItem="{Binding SelectedCustomer.Type, Mode=TwoWay}" 
+									SelectedValue="{Binding SelectedCustomer.Type.TreatmentTypeId, Mode=TwoWay}"  SelectedValuePath="TreatmentTypeId" Style="{StaticResource GreyCombo}" Height="28" HorizontalAlignment="Stretch" VerticalAlignment="Center"  Padding="0" Grid.Column="4" Grid.Row="14" Margin="10,0,0,0" />
+								<Button Content="{Binding ConverterParameter=ltPaymentRef, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Grid.Column="5" Grid.Row="1" Style="{StaticResource GreenButton}" Width="100" HorizontalAlignment="Left" Margin="10,0,0,0" d:LayoutOverrides="GridBox" VerticalAlignment="Center" Height="30" Cursor="Hand" ToolTipService.ToolTip="{Binding ConverterParameter=ltPaymentRef, Converter={StaticResource Localization}, Source={StaticResource Localization}}"/>
+								<TextBlock Text="{Binding ConverterParameter=ltAlertExpires, Converter={StaticResource Localization}, Source={StaticResource Localization}}" HorizontalAlignment="Left" VerticalAlignment="Center" TextWrapping="Wrap" Margin="20,0,0,0" Grid.Row="12"/>
+								<Grid Grid.Row="12"  Margin="0" Grid.ColumnSpan="2"  >
+									<Grid.ColumnDefinitions><ColumnDefinition/>
+										<ColumnDefinition/>
+										<ColumnDefinition />
+										<ColumnDefinition />
+									</Grid.ColumnDefinitions>
+                                                
+									<CheckBox IsChecked="{Binding IsAlertExpires, Mode=TwoWay}"  Margin="0,0,10,0"  d:LayoutOverrides="Height" HorizontalAlignment="Right" VerticalAlignment="Center" FlowDirection="RightToLeft" Grid.Column="1"/>
+									<sdk:DatePicker Margin="0"  IsEnabled="{Binding IsAlertExpires, Mode=OneWay}" Text="{Binding SelectedCustomer.AlertExpiryDate, ConverterParameter=dd-MMM-yy, Converter={StaticResource DateTimeFormatter}, Mode=TwoWay}"  Grid.Column="2"  Height="28" VerticalAlignment="Center"/>
+									<Button  Grid.Column="3" HorizontalAlignment="Right" Width="62" Height="30" Content="{Binding ConverterParameter=ltCCAlert, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Style="{StaticResource GreenButton}" Margin="0" d:LayoutOverrides="GridBox" Cursor="Hand" ToolTipService.ToolTip="{Binding ConverterParameter=ltCCAlert, Converter={StaticResource Localization}, Source={StaticResource Localization}}">
+										<inter:Interaction.Triggers>
+											<inter:EventTrigger EventName="Click">
+												<ei:ControlStoryboardAction/>
+											</inter:EventTrigger>
+										</inter:Interaction.Triggers>
+									</Button>
+								</Grid>
+							</Grid>
+						</Grid>
+					</ScrollViewer>
+
+				</sdk:TabItem>
+				<sdk:TabItem x:Name="tabItem2" Header="{Binding ConverterParameter=ltCorrespondence, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Style="{StaticResource TabItemStyle1}" Width="150">
+					<Grid Background="White"/>
+				</sdk:TabItem>
+				<sdk:TabItem x:Name="tabItem3" Header="{Binding ConverterParameter=ltCharges, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Style="{StaticResource TabItemStyle1}" Width="120">
+					<Grid Background="White"/>
+				</sdk:TabItem>
+				<sdk:TabItem x:Name="tabItem4" Header="{Binding ConverterParameter=ltInvoiceOptions, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Style="{StaticResource TabItemStyle1}" Width="120">
+					<Grid Background="White"/>
+				</sdk:TabItem>
+				<sdk:TabItem x:Name="tabItem5" Header="{Binding ConverterParameter=ltRelationships, Converter={StaticResource Localization}, Source={StaticResource Localization}}" Style="{StaticResource TabItemStyle1}" Width="120">
+					<Grid Background="White"/>
+				</sdk:TabItem>
+			</sdk:TabControl>
+		</controlsToolkit:BusyIndicator>
+	</Grid>
+</UserControl>

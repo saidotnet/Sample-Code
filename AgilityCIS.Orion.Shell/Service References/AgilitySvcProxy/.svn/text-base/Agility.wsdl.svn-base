@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.agility.com/contracts" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.agility.com/contracts" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://schemas.agility.com/contracts/Imports">
+      <xsd:import schemaLocation="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc?xsd=xsd0" namespace="http://schemas.agility.com/contracts" />
+      <xsd:import schemaLocation="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AgilityCIS.Orion.Services.DataContracts" />
+      <xsd:import schemaLocation="http://localhost:50369/AgilitySite/AgilityCIS.Orion.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AgilityCIS.Orion.Services.DataContracts.Criteria" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAgilityService_GetCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_GetCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_Login_FaultDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/AgilityCIS.Orion.Services.DataContracts" name="detail" element="q1:FaultDetail" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_SearchCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IAgilityService_SearchCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCustomersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAgilityService">
+    <wsdl:operation name="GetCustomers">
+      <wsdl:input wsaw:Action="GetCustomers" message="tns:IAgilityService_GetCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/GetCustomersResponse" message="tns:IAgilityService_GetCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="Login" message="tns:IAgilityService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/LoginResponse" message="tns:IAgilityService_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/LoginFaultDetailFault" name="FaultDetailFault" message="tns:IAgilityService_Login_FaultDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCustomers">
+      <wsdl:input wsaw:Action="SearchCustomers" message="tns:IAgilityService_SearchCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://schemas.agility.com/contracts/IAgilityService/SearchCustomersResponse" message="tns:IAgilityService_SearchCustomers_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
